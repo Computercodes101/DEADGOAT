@@ -26,7 +26,7 @@ steps:
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.21'
     mavenVersionOption: 'Path'
-    mavenDirectory: '/home/vsts/work/1/s/mvn'
+    mavenDirectory: '$(build.sourcesdirectory)/mvn'
     mavenSetM2Home: true
     mavenAuthenticateFeed: false
     effectivePomSkip: false
