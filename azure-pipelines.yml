@@ -1,0 +1,41 @@
+# Starter pipeline
+
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- checkout: self
+  fetchDepth: 0
+- task: SonarCloudPrepare@3
+  inputs:
+    SonarQube: 'SonarQube'
+    organization: 'carsonbountry'
+    scannerMode: 'other'
+    extraProperties: |
+      sonar.projectKey=carsonbountry_DEADGOAT
+      sonar.projectName=DEADGOAT
+- task: Maven@4
+  inputs:
+    mavenPomFile: 'pom.xml'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: true
+    sqMavenPluginVersionChoice: 'latest'
+- task: SonarCloudPublish@3
+  inputs:
+    pollingTimeoutSec: '300'
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your PowerShell commands here.
+      
+      Write-Host "Hello World"
