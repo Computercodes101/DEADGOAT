@@ -565,7 +565,7 @@
               <include>**/*.md</include>
             </includes>
             <excludes>
-              <exclude>open-jdk/*</exclude>
+              <exclude>${project.basedir}/open-jdk/**/*.md</exclude>
             </excludes>
             <flexmark></flexmark>
           </markdown>
