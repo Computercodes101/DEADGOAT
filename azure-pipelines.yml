@@ -10,14 +10,6 @@ pool:
 steps:
 - checkout: self
   fetchDepth: 0
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: 'wget "https://dlcdn.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.zip"'
-- task: ExtractFiles@1
-  inputs:
-      archiveFilePatterns: 'apache-maven-3.9.9-bin.zip'
-      destinationFolder: '$(build.sourcesdirectory)/maven'
 - task: SonarCloudPrepare@3
   inputs:
     SonarQube: 'SonarQube'
@@ -34,9 +26,7 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.21'
-    mavenVersionOption: 'Path'
-    mavenDirectory: '$(build.sourcesdirectory)/maven/apache-maven-3.9.9'
-    mavenSetM2Home: true
+    mavenVersionOption: 'Default'
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: true
