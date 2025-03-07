@@ -10,11 +10,19 @@ pool:
 steps:
 - checkout: self
   fetchDepth: 0
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: 'wget "https://download.java.net/java/GA/jdk23.0.2/6da2a6609d6e406f85c491fcb119101b/7/GPL/openjdk-23.0.2_linux-x64_bin.tar.gz"'
+    workingDirectory: '$(Build.SourcesDirectory)'
 - task: JavaToolInstaller@1
   inputs:
     versionSpec: '23'
     jdkArchitectureOption: 'x64'
-    jdkSourceOption: 'PreInstalled'
+    jdkSourceOption: 'LocalDirectory'
+    jdkFile: '$(Build.SourcesDirectory)/openjdk-23.0.2_linux-x64_bin.tar.gz'
+    jdkDestinationDirectory: '$(Build.SourcesDirectory)/open-jdk'
+    cleanDestinationDirectory: true
 - task: SonarCloudPrepare@3
   inputs:
     SonarQube: 'SonarQube'
