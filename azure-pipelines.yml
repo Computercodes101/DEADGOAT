@@ -26,10 +26,10 @@ steps:
 - task: SonarCloudPrepare@3
   inputs:
     SonarQube: 'SonarQube'
-    organization: 'carsonbountry'
+    organization: 'pilot1782'
     scannerMode: 'other'
     extraProperties: |
-      sonar.projectKey=carsonbountry_DEADGOAT
+      sonar.projectKey=pilot1782_DEADGOAT
       sonar.projectName=DEADGOAT
 - task: Maven@4
   inputs:
