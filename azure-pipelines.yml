@@ -35,6 +35,7 @@ steps:
   inputs:
     mavenPomFile: 'pom.xml'
     goals: 'clean install spotless:apply'
+    options: '-X -e'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
