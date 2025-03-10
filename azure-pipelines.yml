@@ -10,6 +10,13 @@ pool:
 steps:
 - checkout: self
   fetchDepth: 0
+
+- script: 'wget https://www-eu.apache.org/dist/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.zip'
+
+- task: ExtractFiles@1
+  inputs:
+      archiveFilePatterns: 'apache-maven-3.9.9-bin.zip'
+      destinationFolder: '$(build.sourcesdirectory)/maven'
 - task: Bash@3
   inputs:
     targetType: 'inline'
@@ -39,7 +46,9 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     javaHomeOption: 'JDKVersion'
-    mavenVersionOption: 'Default'
+    mavenVersionOption: 'Path'
+    mavenDirectory: '$(build.sourcesdirectory)/maven/apache-maven-3.9.9'
+    mavenSetM2Home: false
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: true
