@@ -6,8 +6,6 @@ trigger:
 
 pool:
   name: pilotrakc
-  demands:
-  - Agent.Name -equals 'Docker Agent - Linux'
 
 steps:
 - checkout: self
