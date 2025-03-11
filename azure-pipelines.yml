@@ -5,7 +5,7 @@ trigger:
 - main
 
 pool:
-  name: pilotrakc
+  name: 'Azure Pipelines'
 
 steps:
 - checkout: self
