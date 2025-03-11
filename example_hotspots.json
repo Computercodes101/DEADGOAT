@@ -1,0 +1,2486 @@
+{
+  "paging": {
+    "pageIndex": 1,
+    "pageSize": 100,
+    "total": 91
+  },
+  "hotspots": [
+    {
+      "key": "b432600f-34e7-4704-b715-db0f2ef69647",
+      "component": "WebGoat:src/test/java/org/owasp/webgoat/lessons/deserialization/DeserializeTest.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 59,
+      "message": "'token' detected in this expression, review this potentially hard-coded secret.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2023-01-04T00:07:23-0700",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 59,
+        "endLine": 59,
+        "startOffset": 11,
+        "endOffset": 16
+      },
+      "flows": [],
+      "ruleKey": "java:S6418",
+      "messageFormattings": []
+    },
+    {
+      "key": "7ecc5b3b-2b02-489c-8042-1759b5bb2bd8",
+      "component": "WebGoat:src/test/java/org/owasp/webgoat/lessons/deserialization/DeserializeTest.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 62,
+      "message": "'token' detected in this expression, review this potentially hard-coded secret.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2023-01-04T00:07:23-0700",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 62,
+        "endLine": 62,
+        "startOffset": 78,
+        "endOffset": 83
+      },
+      "flows": [],
+      "ruleKey": "java:S6418",
+      "messageFormattings": []
+    },
+    {
+      "key": "26c2f779-5a33-4372-add4-79c1971e1c8e",
+      "component": "WebGoat:src/test/java/org/owasp/webgoat/lessons/deserialization/DeserializeTest.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 73,
+      "message": "'token' detected in this expression, review this potentially hard-coded secret.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2023-01-04T00:07:23-0700",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 73,
+        "endLine": 73,
+        "startOffset": 11,
+        "endOffset": 16
+      },
+      "flows": [],
+      "ruleKey": "java:S6418",
+      "messageFormattings": []
+    },
+    {
+      "key": "e3eb15b7-7cfa-4131-a265-20052fa6fddb",
+      "component": "WebGoat:src/test/java/org/owasp/webgoat/lessons/deserialization/DeserializeTest.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 76,
+      "message": "'token' detected in this expression, review this potentially hard-coded secret.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2023-01-04T00:07:23-0700",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 76,
+        "endLine": 76,
+        "startOffset": 78,
+        "endOffset": 83
+      },
+      "flows": [],
+      "ruleKey": "java:S6418",
+      "messageFormattings": []
+    },
+    {
+      "key": "b8dd89be-da49-42c8-bd2d-fde2db54dc38",
+      "component": "WebGoat:src/test/java/org/owasp/webgoat/lessons/deserialization/DeserializeTest.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 87,
+      "message": "'token' detected in this expression, review this potentially hard-coded secret.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2023-01-04T00:07:23-0700",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 87,
+        "endLine": 87,
+        "startOffset": 11,
+        "endOffset": 16
+      },
+      "flows": [],
+      "ruleKey": "java:S6418",
+      "messageFormattings": []
+    },
+    {
+      "key": "be2f5889-a5b4-48ed-8ce6-093767697fa1",
+      "component": "WebGoat:src/test/java/org/owasp/webgoat/lessons/deserialization/DeserializeTest.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 90,
+      "message": "'token' detected in this expression, review this potentially hard-coded secret.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2023-01-04T00:07:23-0700",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 90,
+        "endLine": 90,
+        "startOffset": 78,
+        "endOffset": 83
+      },
+      "flows": [],
+      "ruleKey": "java:S6418",
+      "messageFormattings": []
+    },
+    {
+      "key": "57be2fbf-e257-4b85-88db-b5555a8b4237",
+      "component": "WebGoat:src/test/java/org/owasp/webgoat/lessons/jwt/JWTRefreshEndpointTest.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 54,
+      "message": "'Token' detected in this expression, review this potentially hard-coded secret.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2023-01-04T00:07:23-0700",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 54,
+        "endLine": 54,
+        "startOffset": 11,
+        "endOffset": 25
+      },
+      "flows": [],
+      "ruleKey": "java:S6418",
+      "messageFormattings": []
+    },
+    {
+      "key": "77f95681-fcff-4abc-8cd7-7480f2dca8e0",
+      "component": "WebGoat:src/test/java/org/owasp/webgoat/lessons/jwt/JWTRefreshEndpointTest.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 100,
+      "message": "'Token' detected in this expression, review this potentially hard-coded secret.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2023-01-04T00:07:23-0700",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 100,
+        "endLine": 100,
+        "startOffset": 11,
+        "endOffset": 25
+      },
+      "flows": [],
+      "ruleKey": "java:S6418",
+      "messageFormattings": []
+    },
+    {
+      "key": "0f7f6d8c-21bf-4602-bb5f-4230a8966027",
+      "component": "WebGoat:src/test/java/org/owasp/webgoat/lessons/jwt/JWTRefreshEndpointTest.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 112,
+      "message": "'Token' detected in this expression, review this potentially hard-coded secret.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2023-01-04T00:07:23-0700",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 112,
+        "endLine": 112,
+        "startOffset": 11,
+        "endOffset": 25
+      },
+      "flows": [],
+      "ruleKey": "java:S6418",
+      "messageFormattings": []
+    },
+    {
+      "key": "cda43c5f-ad83-48a5-98c2-05b56268d656",
+      "component": "WebGoat:src/test/java/org/owasp/webgoat/lessons/jwt/claimmisuse/JWTHeaderKIDEndpointTest.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 25,
+      "message": "'TOKEN' detected in this expression, review this potentially hard-coded secret.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2023-01-04T00:07:23-0700",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 25,
+        "endLine": 25,
+        "startOffset": 30,
+        "endOffset": 41
+      },
+      "flows": [],
+      "ruleKey": "java:S6418",
+      "messageFormattings": []
+    },
+    {
+      "key": "7f28364f-5f16-410e-b4bd-f7cead968ba0",
+      "component": "WebGoat:src/test/java/org/owasp/webgoat/lessons/jwt/claimmisuse/JWTHeaderKIDEndpointTest.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 56,
+      "message": "'token' detected in this expression, review this potentially hard-coded secret.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2023-08-08T09:18:22-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 56,
+        "endLine": 56,
+        "startOffset": 59,
+        "endOffset": 64
+      },
+      "flows": [],
+      "ruleKey": "java:S6418",
+      "messageFormattings": []
+    },
+    {
+      "key": "650ff234-2cb7-423f-8ea4-db4f60a0ba7f",
+      "component": "WebGoat:src/test/java/org/owasp/webgoat/lessons/jwt/claimmisuse/JWTHeaderKIDEndpointTest.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 68,
+      "message": "'token' detected in this expression, review this potentially hard-coded secret.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 68,
+        "endLine": 68,
+        "startOffset": 17,
+        "endOffset": 22
+      },
+      "flows": [],
+      "ruleKey": "java:S6418",
+      "messageFormattings": []
+    },
+    {
+      "key": "e2113910-a76f-4611-bbff-42e7d6383ff9",
+      "component": "WebGoat:src/main/resources/lessons/jwt/js/jwt-refresh.js",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 10,
+      "message": "Review this potentially hard-coded password.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2018-05-23T06:28:19-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 10,
+        "endLine": 10,
+        "startOffset": 52,
+        "endOffset": 70
+      },
+      "flows": [],
+      "ruleKey": "javascript:S2068",
+      "messageFormattings": []
+    },
+    {
+      "key": "c6ff07f1-2835-4386-a099-1775631a625d",
+      "component": "WebGoat:src/it/java/org/owasp/webgoat/integration/GeneralLessonIntegrationTest.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 123,
+      "message": "'password' detected in this expression, review this potentially hard-coded password.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 123,
+        "endLine": 123,
+        "startOffset": 11,
+        "endOffset": 14
+      },
+      "flows": [],
+      "ruleKey": "java:S2068",
+      "messageFormattings": []
+    },
+    {
+      "key": "c9c62035-b333-41c7-b9e2-ecdb69f444d8",
+      "component": "WebGoat:src/it/java/org/owasp/webgoat/integration/GeneralLessonIntegrationTest.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 133,
+      "message": "'password' detected in this expression, review this potentially hard-coded password.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 133,
+        "endLine": 133,
+        "startOffset": 11,
+        "endOffset": 14
+      },
+      "flows": [],
+      "ruleKey": "java:S2068",
+      "messageFormattings": []
+    },
+    {
+      "key": "a3b7ce99-9dd0-4ca5-bf7e-36917072dbad",
+      "component": "WebGoat:src/it/java/org/owasp/webgoat/integration/IDORIntegrationTest.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 44,
+      "message": "'password' detected in this expression, review this potentially hard-coded password.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 44,
+        "endLine": 44,
+        "startOffset": 11,
+        "endOffset": 14
+      },
+      "flows": [],
+      "ruleKey": "java:S2068",
+      "messageFormattings": []
+    },
+    {
+      "key": "07ea2276-6fc0-4058-83be-4d5c548c9f9f",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/challenges/SolutionConstants.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 10,
+      "message": "'PASSWORD' detected in this expression, review this potentially hard-coded password.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 10,
+        "endLine": 10,
+        "startOffset": 9,
+        "endOffset": 17
+      },
+      "flows": [],
+      "ruleKey": "java:S2068",
+      "messageFormattings": []
+    },
+    {
+      "key": "5ec4acd8-4375-48c2-b4ce-6e22d1c2c1bf",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/challenges/challenge7/Assignment7.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 40,
+      "message": "'PASSWORD' detected in this expression, review this potentially hard-coded password.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2023-02-22T14:55:48-0700",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 40,
+        "endLine": 40,
+        "startOffset": 29,
+        "endOffset": 48
+      },
+      "flows": [],
+      "ruleKey": "java:S2068",
+      "messageFormattings": []
+    },
+    {
+      "key": "bdc51ecd-6109-4196-99d5-91c7e084bd6d",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/idor/IDORLogin.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 35,
+      "message": "'password' detected in this expression, review this potentially hard-coded password.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 35,
+        "endLine": 35,
+        "startOffset": 28,
+        "endOffset": 31
+      },
+      "flows": [],
+      "ruleKey": "java:S2068",
+      "messageFormattings": []
+    },
+    {
+      "key": "d2ea8812-c8b3-4068-ada2-b3084bb379d9",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/idor/IDORLogin.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 41,
+      "message": "'password' detected in this expression, review this potentially hard-coded password.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 41,
+        "endLine": 41,
+        "startOffset": 29,
+        "endOffset": 32
+      },
+      "flows": [],
+      "ruleKey": "java:S2068",
+      "messageFormattings": []
+    },
+    {
+      "key": "82510bcc-fe00-4661-b571-42056dd3ea27",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/insecurelogin/InsecureLoginTask.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 21,
+      "message": "'password' detected in this expression, review this potentially hard-coded password.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 21,
+        "endLine": 21,
+        "startOffset": 62,
+        "endOffset": 70
+      },
+      "flows": [],
+      "ruleKey": "java:S2068",
+      "messageFormattings": []
+    },
+    {
+      "key": "647427d3-c7bb-4b61-8a5e-730d7e280e52",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/jwt/JWTRefreshEndpoint.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 45,
+      "message": "'PASSWORD' detected in this expression, review this potentially hard-coded password.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 45,
+        "endLine": 45,
+        "startOffset": 29,
+        "endOffset": 37
+      },
+      "flows": [],
+      "ruleKey": "java:S2068",
+      "messageFormattings": []
+    },
+    {
+      "key": "70433030-03fd-416c-a9a4-22b3e9d5a369",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/jwt/JWTRefreshEndpoint.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 46,
+      "message": "'PASSWORD' detected in this expression, review this potentially hard-coded password.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 46,
+        "endLine": 46,
+        "startOffset": 30,
+        "endOffset": 42
+      },
+      "flows": [],
+      "ruleKey": "java:S2068",
+      "messageFormattings": []
+    },
+    {
+      "key": "1456b509-7fbe-4fb6-8145-8bb111b1adea",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/jwt/JWTRefreshEndpoint.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 61,
+      "message": "'password' detected in this expression, review this potentially hard-coded password.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 61,
+        "endLine": 61,
+        "startOffset": 58,
+        "endOffset": 66
+      },
+      "flows": [],
+      "ruleKey": "java:S2068",
+      "messageFormattings": []
+    },
+    {
+      "key": "7a61bca8-9b01-4bc3-8e99-8292d2fb635c",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/missingac/MissingFunctionAC.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 14,
+      "message": "'PASSWORD' detected in this expression, review this potentially hard-coded password.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 14,
+        "endLine": 14,
+        "startOffset": 29,
+        "endOffset": 49
+      },
+      "flows": [],
+      "ruleKey": "java:S2068",
+      "messageFormattings": []
+    },
+    {
+      "key": "affdcf8f-d3ce-4807-b50f-b74b09d1c70c",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/missingac/MissingFunctionAC.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 15,
+      "message": "'PASSWORD' detected in this expression, review this potentially hard-coded password.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 15,
+        "endLine": 15,
+        "startOffset": 29,
+        "endOffset": 48
+      },
+      "flows": [],
+      "ruleKey": "java:S2068",
+      "messageFormattings": []
+    },
+    {
+      "key": "277d6213-8cfa-4161-acca-6520b28b6f47",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/passwordreset/ResetLinkAssignment.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 107,
+      "message": "'password' detected in this expression, review this potentially hard-coded password.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 107,
+        "endLine": 107,
+        "startOffset": 20,
+        "endOffset": 31
+      },
+      "flows": [],
+      "ruleKey": "java:S2068",
+      "messageFormattings": []
+    },
+    {
+      "key": "eaeeb117-26a7-465e-bda8-86ecb4b24f83",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/sqlinjection/advanced/SqlInjectionLesson6b.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 42,
+      "message": "'password' detected in this expression, review this potentially hard-coded password.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 42,
+        "endLine": 42,
+        "startOffset": 11,
+        "endOffset": 19
+      },
+      "flows": [],
+      "ruleKey": "java:S2068",
+      "messageFormattings": []
+    },
+    {
+      "key": "c0f40aab-2e96-4c19-a21b-093782b2379a",
+      "component": "WebGoat:src/test/java/org/owasp/webgoat/container/report/ReportCardControllerTest.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 52,
+      "message": "'password' detected in this expression, review this potentially hard-coded password.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 52,
+        "endLine": 52,
+        "startOffset": 36,
+        "endOffset": 44
+      },
+      "flows": [],
+      "ruleKey": "java:S2068",
+      "messageFormattings": []
+    },
+    {
+      "key": "f0b899bd-14a8-4379-b491-c92d7666d256",
+      "component": "WebGoat:src/test/java/org/owasp/webgoat/lessons/challenges/Assignment1Test.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 48,
+      "message": "'password' detected in this expression, review this potentially hard-coded password.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 48,
+        "endLine": 48,
+        "startOffset": 17,
+        "endOffset": 22
+      },
+      "flows": [],
+      "ruleKey": "java:S2068",
+      "messageFormattings": []
+    },
+    {
+      "key": "620df07f-616b-4b74-a35f-34c824678d79",
+      "component": "WebGoat:src/test/java/org/owasp/webgoat/lessons/hijacksession/HijackSessionAssignmentTest.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 67,
+      "message": "'password' detected in this expression, review this potentially hard-coded password.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 67,
+        "endLine": 67,
+        "startOffset": 17,
+        "endOffset": 22
+      },
+      "flows": [],
+      "ruleKey": "java:S2068",
+      "messageFormattings": []
+    },
+    {
+      "key": "d9f3f8ac-9516-4b8b-9ac1-aac95888fb13",
+      "component": "WebGoat:src/test/java/org/owasp/webgoat/lessons/jwt/JWTRefreshEndpointTest.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 179,
+      "message": "'password' detected in this expression, review this potentially hard-coded password.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 179,
+        "endLine": 179,
+        "startOffset": 14,
+        "endOffset": 17
+      },
+      "flows": [],
+      "ruleKey": "java:S2068",
+      "messageFormattings": []
+    },
+    {
+      "key": "87a28de0-710b-4a3d-ac43-56940623f4b5",
+      "component": "WebGoat:src/test/java/org/owasp/webgoat/lessons/jwt/JWTRefreshEndpointTest.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 208,
+      "message": "'password' detected in this expression, review this potentially hard-coded password.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 208,
+        "endLine": 208,
+        "startOffset": 14,
+        "endOffset": 17
+      },
+      "flows": [],
+      "ruleKey": "java:S2068",
+      "messageFormattings": []
+    },
+    {
+      "key": "36aae7d1-764c-4561-8a1f-79ef6b97900c",
+      "component": "WebGoat:src/test/java/org/owasp/webgoat/lessons/spoofcookie/SpoofCookieAssignmentTest.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 59,
+      "message": "'password' detected in this expression, review this potentially hard-coded password.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 59,
+        "endLine": 59,
+        "startOffset": 11,
+        "endOffset": 19
+      },
+      "flows": [],
+      "ruleKey": "java:S2068",
+      "messageFormattings": []
+    },
+    {
+      "key": "20f14c8f-b559-416f-95d5-36f640f1ff20",
+      "component": "WebGoat:src/test/java/org/owasp/webgoat/lessons/spoofcookie/SpoofCookieAssignmentTest.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 65,
+      "message": "'password' detected in this expression, review this potentially hard-coded password.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 65,
+        "endLine": 65,
+        "startOffset": 17,
+        "endOffset": 22
+      },
+      "flows": [],
+      "ruleKey": "java:S2068",
+      "messageFormattings": []
+    },
+    {
+      "key": "a84715f0-e46d-4292-ba87-39eeab8e7ff0",
+      "component": "WebGoat:src/test/java/org/owasp/webgoat/webwolf/user/UserServiceTest.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 31,
+      "message": "'password' detected in this expression, review this potentially hard-coded password.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 31,
+        "endLine": 31,
+        "startOffset": 8,
+        "endOffset": 16
+      },
+      "flows": [],
+      "ruleKey": "java:S2068",
+      "messageFormattings": []
+    },
+    {
+      "key": "40d7ebf1-2ea8-41cd-bb43-538f33635883",
+      "component": "WebGoat:src/test/java/org/owasp/webgoat/webwolf/user/UserServiceTest.java",
+      "project": "WebGoat",
+      "securityCategory": "auth",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 54,
+      "message": "'password' detected in this expression, review this potentially hard-coded password.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 54,
+        "endLine": 54,
+        "startOffset": 8,
+        "endOffset": 16
+      },
+      "flows": [],
+      "ruleKey": "java:S2068",
+      "messageFormattings": []
+    },
+    {
+      "key": "342c47ae-a754-44b6-b186-6650aa64c46e",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/container/lessons/LessonConnectionInvocationHandler.java",
+      "project": "WebGoat",
+      "securityCategory": "sql-injection",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 31,
+      "message": "Make sure using a dynamically formatted SQL query is safe here.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 31,
+        "endLine": 31,
+        "startOffset": 26,
+        "endOffset": 69
+      },
+      "flows": [],
+      "ruleKey": "java:S2077",
+      "messageFormattings": []
+    },
+    {
+      "key": "f40788f8-3a3d-4300-bf38-af657726c3be",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/challenges/challenge5/Assignment5.java",
+      "project": "WebGoat",
+      "securityCategory": "sql-injection",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 45,
+      "message": "Make sure using a dynamically formatted SQL query is safe here.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2023-01-04T00:07:23-0700",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 45,
+        "endLine": 49,
+        "startOffset": 14,
+        "endOffset": 23
+      },
+      "flows": [],
+      "ruleKey": "java:S2077",
+      "messageFormattings": []
+    },
+    {
+      "key": "413a49f4-74d1-4fd9-b41f-590e25290409",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/jwt/claimmisuse/JWTHeaderKIDEndpoint.java",
+      "project": "WebGoat",
+      "securityCategory": "sql-injection",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 76,
+      "message": "Make sure using a dynamically formatted SQL query is safe here.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2023-01-04T00:07:23-0700",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 76,
+        "endLine": 76,
+        "startOffset": 38,
+        "endOffset": 89
+      },
+      "flows": [],
+      "ruleKey": "java:S2077",
+      "messageFormattings": []
+    },
+    {
+      "key": "ebecc8f6-1a92-482c-a25b-0c42460305bf",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/sqlinjection/advanced/SqlInjectionChallenge.java",
+      "project": "WebGoat",
+      "securityCategory": "sql-injection",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 54,
+      "message": "Make sure using a dynamically formatted SQL query is safe here.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2023-01-04T00:07:23-0700",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 54,
+        "endLine": 54,
+        "startOffset": 53,
+        "endOffset": 67
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/sqlinjection/advanced/SqlInjectionChallenge.java",
+              "textRange": {
+                "startLine": 52,
+                "endLine": 52,
+                "startOffset": 12,
+                "endOffset": 90
+              },
+              "msg": "SQL Query is dynamically formatted and assigned to 'checkUserQuery'",
+              "msgFormattings": []
+            }
+          ]
+        }
+      ],
+      "ruleKey": "java:S2077",
+      "messageFormattings": []
+    },
+    {
+      "key": "5f9c0dbe-8011-457e-9058-7491b3fa0ce3",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson10.java",
+      "project": "WebGoat",
+      "securityCategory": "sql-injection",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 56,
+      "message": "Make sure using a dynamically formatted SQL query is safe here.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 56,
+        "endLine": 56,
+        "startOffset": 51,
+        "endOffset": 56
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson10.java",
+              "textRange": {
+                "startLine": 49,
+                "endLine": 49,
+                "startOffset": 19,
+                "endOffset": 82
+              },
+              "msg": "SQL Query is dynamically formatted and assigned to 'query'",
+              "msgFormattings": []
+            }
+          ]
+        }
+      ],
+      "ruleKey": "java:S2077",
+      "messageFormattings": []
+    },
+    {
+      "key": "8c9f80c7-dd8a-42d1-856c-90afacb759be",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson5b.java",
+      "project": "WebGoat",
+      "securityCategory": "sql-injection",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 49,
+      "message": "Make sure using a dynamically formatted SQL query is safe here.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2023-01-04T00:07:23-0700",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 49,
+        "endLine": 49,
+        "startOffset": 14,
+        "endOffset": 25
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson5b.java",
+              "textRange": {
+                "startLine": 45,
+                "endLine": 45,
+                "startOffset": 25,
+                "endOffset": 99
+              },
+              "msg": "SQL Query is dynamically formatted and assigned to 'queryString'",
+              "msgFormattings": []
+            }
+          ]
+        }
+      ],
+      "ruleKey": "java:S2077",
+      "messageFormattings": []
+    },
+    {
+      "key": "bdd38fb7-bce1-4ed4-9d7e-1c9f81a7e821",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson8.java",
+      "project": "WebGoat",
+      "securityCategory": "sql-injection",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 62,
+      "message": "Make sure using a dynamically formatted SQL query is safe here.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2023-01-04T00:07:23-0700",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 62,
+        "endLine": 62,
+        "startOffset": 51,
+        "endOffset": 56
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson8.java",
+              "textRange": {
+                "startLine": 50,
+                "endLine": 54,
+                "startOffset": 8,
+                "endOffset": 17
+              },
+              "msg": "SQL Query is dynamically formatted and assigned to 'query'",
+              "msgFormattings": []
+            }
+          ]
+        }
+      ],
+      "ruleKey": "java:S2077",
+      "messageFormattings": []
+    },
+    {
+      "key": "6565c5b6-d677-454e-b7be-3f143a78e2fa",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson8.java",
+      "project": "WebGoat",
+      "securityCategory": "sql-injection",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 142,
+      "message": "Make sure using a dynamically formatted SQL query is safe here.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2023-01-04T00:07:23-0700",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 142,
+        "endLine": 142,
+        "startOffset": 30,
+        "endOffset": 38
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson8.java",
+              "textRange": {
+                "startLine": 138,
+                "endLine": 138,
+                "startOffset": 8,
+                "endOffset": 89
+              },
+              "msg": "SQL Query is dynamically formatted and assigned to 'logQuery'",
+              "msgFormattings": []
+            }
+          ]
+        }
+      ],
+      "ruleKey": "java:S2077",
+      "messageFormattings": []
+    },
+    {
+      "key": "76fa7bf0-f50f-4aed-ab57-e56aede5ea4a",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson9.java",
+      "project": "WebGoat",
+      "securityCategory": "sql-injection",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 65,
+      "message": "Make sure using a dynamically formatted SQL query is safe here.",
+      "author": "46624375+francoiscapon@users.noreply.github.com",
+      "creationDate": "2024-06-01T02:50:38-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 65,
+        "endLine": 65,
+        "startOffset": 24,
+        "endOffset": 38
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson9.java",
+              "textRange": {
+                "startLine": 51,
+                "endLine": 55,
+                "startOffset": 8,
+                "endOffset": 17
+              },
+              "msg": "SQL Query is dynamically formatted and assigned to 'queryInjection'",
+              "msgFormattings": []
+            }
+          ]
+        }
+      ],
+      "ruleKey": "java:S2077",
+      "messageFormattings": []
+    },
+    {
+      "key": "1bada04a-13cd-45ad-acec-7bc44d0a03ce",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/sqlinjection/mitigation/Servers.java",
+      "project": "WebGoat",
+      "securityCategory": "sql-injection",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 55,
+      "message": "Make sure using a dynamically formatted SQL query is safe here.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2023-01-04T00:07:23-0700",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 55,
+        "endLine": 57,
+        "startOffset": 14,
+        "endOffset": 26
+      },
+      "flows": [],
+      "ruleKey": "java:S2077",
+      "messageFormattings": []
+    },
+    {
+      "key": "cd6622c6-72a2-495f-a991-f498f7d34cbd",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/container/LessonResourceScanner.java",
+      "project": "WebGoat",
+      "securityCategory": "dos",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 21,
+      "message": "Make sure the regex used here, which is vulnerable to polynomial runtime due to backtracking, cannot lead to denial of service.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2024-12-21T10:47:30-0700",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 21,
+        "endLine": 21,
+        "startOffset": 55,
+        "endOffset": 62
+      },
+      "flows": [],
+      "ruleKey": "java:S5852",
+      "messageFormattings": []
+    },
+    {
+      "key": "dbc931f9-a96b-4a57-92a8-b051d9c57c7a",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/sqlinjection/advanced/SqlInjectionLesson6a.java",
+      "project": "WebGoat",
+      "securityCategory": "dos",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 65,
+      "message": "Make sure the regex used here, which is vulnerable to polynomial runtime due to backtracking, cannot lead to denial of service.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2024-10-26T14:18:28-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 65,
+        "endLine": 65,
+        "startOffset": 23,
+        "endOffset": 30
+      },
+      "flows": [],
+      "ruleKey": "java:S5852",
+      "messageFormattings": []
+    },
+    {
+      "key": "f4978671-d63c-4117-9e2d-bcf567eff018",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/xss/CrossSiteScriptingLesson5a.java",
+      "project": "WebGoat",
+      "securityCategory": "dos",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 32,
+      "message": "Make sure the regex used here, which is vulnerable to polynomial runtime due to backtracking, cannot lead to denial of service.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2023-01-04T00:07:23-0700",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 32,
+        "endLine": 32,
+        "startOffset": 14,
+        "endOffset": 21
+      },
+      "flows": [],
+      "ruleKey": "java:S5852",
+      "messageFormattings": []
+    },
+    {
+      "key": "2760b5ef-ae8d-42bf-b998-8277013844fe",
+      "component": "WebGoat:src/main/resources/webgoat/static/js/goatApp/model/LessonContentModel.js",
+      "project": "WebGoat",
+      "securityCategory": "dos",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 35,
+      "message": "Make sure the regex used here, which is vulnerable to super-linear runtime due to backtracking, cannot lead to denial of service.",
+      "author": "matthias.grundmann@kit.edu",
+      "creationDate": "2018-06-07T11:07:58-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 35,
+        "endLine": 35,
+        "startOffset": 16,
+        "endOffset": 40
+      },
+      "flows": [],
+      "ruleKey": "javascript:S5852",
+      "messageFormattings": []
+    },
+    {
+      "key": "0b80f3b5-faf5-4bfa-b143-8a1de4984425",
+      "component": "WebGoat:src/main/resources/webgoat/static/js/goatApp/model/LessonContentModel.js",
+      "project": "WebGoat",
+      "securityCategory": "dos",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 36,
+      "message": "Make sure the regex used here, which is vulnerable to super-linear runtime due to backtracking, cannot lead to denial of service.",
+      "author": "jason.white@owasp.org",
+      "creationDate": "2017-04-15T03:37:43-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 36,
+        "endLine": 36,
+        "startOffset": 56,
+        "endOffset": 80
+      },
+      "flows": [],
+      "ruleKey": "javascript:S5852",
+      "messageFormattings": []
+    },
+    {
+      "key": "5f42cfde-497c-4643-a340-8188eee5f996",
+      "component": "WebGoat:src/main/resources/webgoat/static/js/libs/mode-java.js",
+      "project": "WebGoat",
+      "securityCategory": "dos",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 585,
+      "message": "Make sure the regex used here, which is vulnerable to super-linear runtime due to backtracking, cannot lead to denial of service.",
+      "author": "rene@zubcevic.com",
+      "creationDate": "2020-04-28T01:33:54-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 585,
+        "endLine": 585,
+        "startOffset": 30,
+        "endOffset": 64
+      },
+      "flows": [],
+      "ruleKey": "javascript:S5852",
+      "messageFormattings": []
+    },
+    {
+      "key": "56bd39a5-372b-4466-9bca-5c97a73fa441",
+      "component": "WebGoat:src/main/resources/webgoat/static/js/libs/mode-java.js",
+      "project": "WebGoat",
+      "securityCategory": "dos",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 678,
+      "message": "Make sure the regex used here, which is vulnerable to super-linear runtime due to backtracking, cannot lead to denial of service.",
+      "author": "rene@zubcevic.com",
+      "creationDate": "2020-04-28T01:33:54-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 678,
+        "endLine": 678,
+        "startOffset": 38,
+        "endOffset": 44
+      },
+      "flows": [],
+      "ruleKey": "javascript:S5852",
+      "messageFormattings": []
+    },
+    {
+      "key": "dbe39ca6-8eb1-47ff-be3c-275f7bba9d22",
+      "component": "WebGoat:src/main/resources/webgoat/static/js/libs/mode-java.js",
+      "project": "WebGoat",
+      "securityCategory": "dos",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 871,
+      "message": "Make sure the regex used here, which is vulnerable to super-linear runtime due to backtracking, cannot lead to denial of service.",
+      "author": "rene@zubcevic.com",
+      "creationDate": "2020-04-28T01:33:54-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 871,
+        "endLine": 871,
+        "startOffset": 24,
+        "endOffset": 92
+      },
+      "flows": [],
+      "ruleKey": "javascript:S5852",
+      "messageFormattings": []
+    },
+    {
+      "key": "a3d0aa06-5bea-47b0-92ab-cc5c6f64a16c",
+      "component": "WebGoat:src/main/resources/webgoat/static/js/libs/text.js",
+      "project": "WebGoat",
+      "securityCategory": "dos",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 16,
+      "message": "Make sure the regex used here, which is vulnerable to super-linear runtime due to backtracking, cannot lead to denial of service.",
+      "author": "jason.white@owasp.org",
+      "creationDate": "2015-09-19T22:09:38-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 16,
+        "endLine": 16,
+        "startOffset": 20,
+        "endOffset": 78
+      },
+      "flows": [],
+      "ruleKey": "javascript:S5852",
+      "messageFormattings": []
+    },
+    {
+      "key": "2c8c85f2-bc6a-4b36-a6bc-52083eae7f4d",
+      "component": "WebGoat:src/main/resources/webgoat/static/js/libs/text.js",
+      "project": "WebGoat",
+      "securityCategory": "dos",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 17,
+      "message": "Make sure the regex used here, which is vulnerable to super-linear runtime due to backtracking, cannot lead to denial of service.",
+      "author": "jason.white@owasp.org",
+      "creationDate": "2015-09-19T22:09:38-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 17,
+        "endLine": 17,
+        "startOffset": 21,
+        "endOffset": 59
+      },
+      "flows": [],
+      "ruleKey": "javascript:S5852",
+      "messageFormattings": []
+    },
+    {
+      "key": "5e7d816e-c02f-4461-ad9f-ae38c1c66c4e",
+      "component": "WebGoat:src/main/resources/webgoat/static/plugins/bootstrap-wysihtml5/js/wysihtml5-0.3.0.js",
+      "project": "WebGoat",
+      "securityCategory": "dos",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 3398,
+      "message": "Make sure the regex used here, which is vulnerable to super-linear runtime due to backtracking, cannot lead to denial of service.",
+      "author": "jsnsotheracct@gmail.com",
+      "creationDate": "2014-08-13T04:14:11-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 3398,
+        "endLine": 3398,
+        "startOffset": 67,
+        "endOffset": 95
+      },
+      "flows": [],
+      "ruleKey": "javascript:S5852",
+      "messageFormattings": []
+    },
+    {
+      "key": "0f737474-3ff1-4916-bd31-a82557398464",
+      "component": "WebGoat:src/main/resources/webgoat/static/plugins/bootstrap-wysihtml5/js/wysihtml5-0.3.0.js",
+      "project": "WebGoat",
+      "securityCategory": "dos",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 3881,
+      "message": "Make sure the regex used here, which is vulnerable to super-linear runtime due to backtracking, cannot lead to denial of service.",
+      "author": "jsnsotheracct@gmail.com",
+      "creationDate": "2014-08-13T04:14:11-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 3881,
+        "endLine": 3881,
+        "startOffset": 26,
+        "endOffset": 32
+      },
+      "flows": [],
+      "ruleKey": "javascript:S5852",
+      "messageFormattings": []
+    },
+    {
+      "key": "a8ab670b-494d-45a4-9e80-93edf338a5b3",
+      "component": "WebGoat:src/main/resources/webgoat/static/js/jquery_form/jquery.form.js",
+      "project": "WebGoat",
+      "securityCategory": "rce",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 125,
+      "message": "Make sure that 'javascript:' code is safe as it is a form of eval().",
+      "author": "lawson89@gmail.com",
+      "creationDate": "2014-09-14T07:56:06-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 125,
+        "endLine": 125,
+        "startOffset": 64,
+        "endOffset": 82
+      },
+      "flows": [],
+      "ruleKey": "javascript:S1523",
+      "messageFormattings": []
+    },
+    {
+      "key": "f2b1583b-5e34-415f-aa04-9a0c1c8d8c83",
+      "component": "WebGoat:src/main/resources/webgoat/static/js/libs/jquery.form.js",
+      "project": "WebGoat",
+      "securityCategory": "rce",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 125,
+      "message": "Make sure that 'javascript:' code is safe as it is a form of eval().",
+      "author": "jason.white@owasp.org",
+      "creationDate": "2015-04-21T16:40:14-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 125,
+        "endLine": 125,
+        "startOffset": 64,
+        "endOffset": 82
+      },
+      "flows": [],
+      "ruleKey": "javascript:S1523",
+      "messageFormattings": []
+    },
+    {
+      "key": "19192738-cb3c-4014-97c6-f36ea231add4",
+      "component": "WebGoat:src/main/resources/webgoat/static/plugins/bootstrap-wysihtml5/js/wysihtml5-0.3.0.js",
+      "project": "WebGoat",
+      "securityCategory": "rce",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 5418,
+      "message": "Make sure that 'javascript:' code is safe as it is a form of eval().",
+      "author": "jsnsotheracct@gmail.com",
+      "creationDate": "2014-08-13T04:14:11-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 5418,
+        "endLine": 5418,
+        "startOffset": 21,
+        "endOffset": 49
+      },
+      "flows": [],
+      "ruleKey": "javascript:S1523",
+      "messageFormattings": []
+    },
+    {
+      "key": "daa422f0-bb79-410d-ad69-8c578279df88",
+      "component": "WebGoat:src/main/resources/webgoat/static/plugins/bootstrap-wysihtml5/js/wysihtml5-0.3.0.js",
+      "project": "WebGoat",
+      "securityCategory": "rce",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 9208,
+      "message": "Make sure that 'javascript:' code is safe as it is a form of eval().",
+      "author": "jsnsotheracct@gmail.com",
+      "creationDate": "2014-08-13T04:14:11-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 9208,
+        "endLine": 9208,
+        "startOffset": 24,
+        "endOffset": 38
+      },
+      "flows": [],
+      "ruleKey": "javascript:S1523",
+      "messageFormattings": []
+    },
+    {
+      "key": "8ed64b75-a836-44b9-9908-a71006c1e53e",
+      "component": "WebGoat:src/main/resources/lessons/chromedevtools/html/ChromeDevTools.html",
+      "project": "WebGoat",
+      "securityCategory": "weak-cryptography",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 53,
+      "message": "Make sure that using this pseudorandom number generator is safe here.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 53,
+        "endLine": 53,
+        "startOffset": 66,
+        "endOffset": 79
+      },
+      "flows": [],
+      "ruleKey": "javascript:S2245",
+      "messageFormattings": []
+    },
+    {
+      "key": "7bfb35d3-5aac-42e2-a912-4bc5d7fdc869",
+      "component": "WebGoat:src/main/resources/lessons/httpbasics/html/HttpBasics.html",
+      "project": "WebGoat",
+      "securityCategory": "weak-cryptography",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 59,
+      "message": "Make sure that using this pseudorandom number generator is safe here.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 59,
+        "endLine": 59,
+        "startOffset": 27,
+        "endOffset": 40
+      },
+      "flows": [],
+      "ruleKey": "javascript:S2245",
+      "messageFormattings": []
+    },
+    {
+      "key": "3dff3cac-c3d2-4c86-bf08-b2a71adb8bf4",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/challenges/challenge1/ImageServlet.java",
+      "project": "WebGoat",
+      "securityCategory": "weak-cryptography",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 21,
+      "message": "Make sure that using this pseudorandom number generator is safe here.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2023-02-22T03:01:34-0700",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 21,
+        "endLine": 21,
+        "startOffset": 40,
+        "endOffset": 46
+      },
+      "flows": [],
+      "ruleKey": "java:S2245",
+      "messageFormattings": []
+    },
+    {
+      "key": "258e9f54-e80f-4b16-98b6-f519a46599d0",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/challenges/challenge7/PasswordResetLink.java",
+      "project": "WebGoat",
+      "securityCategory": "weak-cryptography",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 18,
+      "message": "Make sure that using this pseudorandom number generator is safe here.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 18,
+        "endLine": 18,
+        "startOffset": 24,
+        "endOffset": 30
+      },
+      "flows": [],
+      "ruleKey": "java:S2245",
+      "messageFormattings": []
+    },
+    {
+      "key": "fdcde8dc-ce10-4066-b74f-cffff35da500",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/cryptography/EncodingAssignment.java",
+      "project": "WebGoat",
+      "securityCategory": "weak-cryptography",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 37,
+      "message": "Make sure that using this pseudorandom number generator is safe here.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2023-01-04T00:07:23-0700",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 37,
+        "endLine": 37,
+        "startOffset": 40,
+        "endOffset": 46
+      },
+      "flows": [],
+      "ruleKey": "java:S2245",
+      "messageFormattings": []
+    },
+    {
+      "key": "e62ff125-f673-4e7e-b2bc-673b771cf7dd",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/cryptography/HashingAssignment.java",
+      "project": "WebGoat",
+      "securityCategory": "weak-cryptography",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 37,
+      "message": "Make sure that using this pseudorandom number generator is safe here.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 37,
+        "endLine": 37,
+        "startOffset": 34,
+        "endOffset": 40
+      },
+      "flows": [],
+      "ruleKey": "java:S2245",
+      "messageFormattings": []
+    },
+    {
+      "key": "23129eba-30af-42cb-a389-031714e02783",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/cryptography/HashingAssignment.java",
+      "project": "WebGoat",
+      "securityCategory": "weak-cryptography",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 55,
+      "message": "Make sure that using this pseudorandom number generator is safe here.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 55,
+        "endLine": 55,
+        "startOffset": 34,
+        "endOffset": 40
+      },
+      "flows": [],
+      "ruleKey": "java:S2245",
+      "messageFormattings": []
+    },
+    {
+      "key": "d441fdd2-80e6-46f1-8e21-17ecae25f532",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/csrf/CSRFGetFlag.java",
+      "project": "WebGoat",
+      "securityCategory": "weak-cryptography",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 39,
+      "message": "Make sure that using this pseudorandom number generator is safe here.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 39,
+        "endLine": 39,
+        "startOffset": 28,
+        "endOffset": 34
+      },
+      "flows": [],
+      "ruleKey": "java:S2245",
+      "messageFormattings": []
+    },
+    {
+      "key": "00884ff0-1717-4290-a9b4-05a5ecef72e2",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/csrf/CSRFGetFlag.java",
+      "project": "WebGoat",
+      "securityCategory": "weak-cryptography",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 45,
+      "message": "Make sure that using this pseudorandom number generator is safe here.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 45,
+        "endLine": 45,
+        "startOffset": 28,
+        "endOffset": 34
+      },
+      "flows": [],
+      "ruleKey": "java:S2245",
+      "messageFormattings": []
+    },
+    {
+      "key": "24778b7a-356c-49a8-b2b1-7c0311bdf400",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/csrf/CSRFGetFlag.java",
+      "project": "WebGoat",
+      "securityCategory": "weak-cryptography",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 56,
+      "message": "Make sure that using this pseudorandom number generator is safe here.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 56,
+        "endLine": 56,
+        "startOffset": 26,
+        "endOffset": 32
+      },
+      "flows": [],
+      "ruleKey": "java:S2245",
+      "messageFormattings": []
+    },
+    {
+      "key": "ceeff020-3179-4e64-81ad-40df18ec13de",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/hijacksession/cas/HijackSessionAuthenticationProvider.java",
+      "project": "WebGoat",
+      "securityCategory": "weak-cryptography",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 29,
+      "message": "Make sure that using this pseudorandom number generator is safe here.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 29,
+        "endLine": 29,
+        "startOffset": 31,
+        "endOffset": 37
+      },
+      "flows": [],
+      "ruleKey": "java:S2245",
+      "messageFormattings": []
+    },
+    {
+      "key": "21ce337d-d71b-44f2-a59b-d4008992a480",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/hijacksession/cas/HijackSessionAuthenticationProvider.java",
+      "project": "WebGoat",
+      "securityCategory": "weak-cryptography",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 60,
+      "message": "Make sure that using this pseudorandom number generator is safe here.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 60,
+        "endLine": 60,
+        "startOffset": 61,
+        "endOffset": 68
+      },
+      "flows": [],
+      "ruleKey": "java:S2245",
+      "messageFormattings": []
+    },
+    {
+      "key": "e59e3e4c-066b-4cc9-8b5a-5c36f64d2269",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/jwt/JWTSecretKeyEndpoint.java",
+      "project": "WebGoat",
+      "securityCategory": "weak-cryptography",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 38,
+      "message": "Make sure that using this pseudorandom number generator is safe here.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2023-01-04T00:07:23-0700",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 38,
+        "endLine": 38,
+        "startOffset": 42,
+        "endOffset": 48
+      },
+      "flows": [],
+      "ruleKey": "java:S2245",
+      "messageFormattings": []
+    },
+    {
+      "key": "b30ba897-3c87-4833-a9a7-b5dc3faa92f0",
+      "component": "WebGoat:src/main/resources/webgoat/static/plugins/bootstrap-wysihtml5/js/wysihtml5-0.3.0.js",
+      "project": "WebGoat",
+      "securityCategory": "encrypt-data",
+      "vulnerabilityProbability": "LOW",
+      "status": "TO_REVIEW",
+      "line": 3983,
+      "message": "Using http protocol is insecure. Use https instead.",
+      "author": "jsnsotheracct@gmail.com",
+      "creationDate": "2014-08-13T04:14:11-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 3983,
+        "endLine": 3983,
+        "startOffset": 18,
+        "endOffset": 27
+      },
+      "flows": [],
+      "ruleKey": "javascript:S5332",
+      "messageFormattings": []
+    },
+    {
+      "key": "74df520a-1d03-41b3-a468-bd2c6bc10b89",
+      "component": "WebGoat:src/main/resources/webgoat/static/plugins/bootstrap-wysihtml5/js/wysihtml5-0.3.0.js",
+      "project": "WebGoat",
+      "securityCategory": "encrypt-data",
+      "vulnerabilityProbability": "LOW",
+      "status": "TO_REVIEW",
+      "line": 8160,
+      "message": "Using http protocol is insecure. Use https instead.",
+      "author": "jsnsotheracct@gmail.com",
+      "creationDate": "2014-08-13T04:14:11-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 8160,
+        "endLine": 8160,
+        "startOffset": 28,
+        "endOffset": 37
+      },
+      "flows": [],
+      "ruleKey": "javascript:S5332",
+      "messageFormattings": []
+    },
+    {
+      "key": "aa11f82e-6146-4f6f-ac6e-813f0f956b3b",
+      "component": "WebGoat:src/it/java/org/owasp/webgoat/integration/CryptoIntegrationTest.java",
+      "project": "WebGoat",
+      "securityCategory": "insecure-conf",
+      "vulnerabilityProbability": "LOW",
+      "status": "TO_REVIEW",
+      "line": 36,
+      "message": "Make sure this debug feature is deactivated before delivering the code in production.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 36,
+        "endLine": 36,
+        "startOffset": 8,
+        "endOffset": 23
+      },
+      "flows": [],
+      "ruleKey": "java:S4507",
+      "messageFormattings": []
+    },
+    {
+      "key": "75549d16-e191-438a-875b-3c6a788e8dae",
+      "component": "WebGoat:src/it/java/org/owasp/webgoat/integration/CryptoIntegrationTest.java",
+      "project": "WebGoat",
+      "securityCategory": "insecure-conf",
+      "vulnerabilityProbability": "LOW",
+      "status": "TO_REVIEW",
+      "line": 43,
+      "message": "Make sure this debug feature is deactivated before delivering the code in production.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 43,
+        "endLine": 43,
+        "startOffset": 8,
+        "endOffset": 23
+      },
+      "flows": [],
+      "ruleKey": "java:S4507",
+      "messageFormattings": []
+    },
+    {
+      "key": "880b64e9-c20b-4302-a879-af6642c15f7f",
+      "component": "WebGoat:src/it/java/org/owasp/webgoat/integration/LabelAndHintIntegrationTest.java",
+      "project": "WebGoat",
+      "securityCategory": "insecure-conf",
+      "vulnerabilityProbability": "LOW",
+      "status": "TO_REVIEW",
+      "line": 174,
+      "message": "Make sure this debug feature is deactivated before delivering the code in production.",
+      "author": "rene@zubcevic.com",
+      "creationDate": "2022-07-15T04:44:37-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 174,
+        "endLine": 174,
+        "startOffset": 8,
+        "endOffset": 23
+      },
+      "flows": [],
+      "ruleKey": "java:S4507",
+      "messageFormattings": []
+    },
+    {
+      "key": "4c4299b6-498c-4239-8129-10f39f4ca0b0",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/sqlinjection/advanced/SqlInjectionLesson6b.java",
+      "project": "WebGoat",
+      "securityCategory": "insecure-conf",
+      "vulnerabilityProbability": "LOW",
+      "status": "TO_REVIEW",
+      "line": 55,
+      "message": "Make sure this debug feature is deactivated before delivering the code in production.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 55,
+        "endLine": 55,
+        "startOffset": 13,
+        "endOffset": 28
+      },
+      "flows": [],
+      "ruleKey": "java:S4507",
+      "messageFormattings": []
+    },
+    {
+      "key": "48fb4a53-3219-4138-b49f-d2a324146a7b",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/sqlinjection/advanced/SqlInjectionLesson6b.java",
+      "project": "WebGoat",
+      "securityCategory": "insecure-conf",
+      "vulnerabilityProbability": "LOW",
+      "status": "TO_REVIEW",
+      "line": 59,
+      "message": "Make sure this debug feature is deactivated before delivering the code in production.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 59,
+        "endLine": 59,
+        "startOffset": 8,
+        "endOffset": 23
+      },
+      "flows": [],
+      "ruleKey": "java:S4507",
+      "messageFormattings": []
+    },
+    {
+      "key": "f4258526-93ed-4b79-9511-c84a1053df98",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/sqlinjection/mitigation/SqlInjectionLesson10b.java",
+      "project": "WebGoat",
+      "securityCategory": "insecure-conf",
+      "vulnerabilityProbability": "LOW",
+      "status": "TO_REVIEW",
+      "line": 115,
+      "message": "Make sure this debug feature is deactivated before delivering the code in production.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 115,
+        "endLine": 115,
+        "startOffset": 16,
+        "endOffset": 31
+      },
+      "flows": [],
+      "ruleKey": "java:S4507",
+      "messageFormattings": []
+    },
+    {
+      "key": "1bca7a7b-abb0-4b23-9cbd-a832aa129a0c",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/ssrf/SSRFTask1.java",
+      "project": "WebGoat",
+      "securityCategory": "insecure-conf",
+      "vulnerabilityProbability": "LOW",
+      "status": "TO_REVIEW",
+      "line": 47,
+      "message": "Make sure this debug feature is deactivated before delivering the code in production.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 47,
+        "endLine": 47,
+        "startOffset": 8,
+        "endOffset": 23
+      },
+      "flows": [],
+      "ruleKey": "java:S4507",
+      "messageFormattings": []
+    },
+    {
+      "key": "1c07132f-f129-42d8-9c28-3ff9d1eac10b",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/pathtraversal/ProfileZipSlip.java",
+      "project": "WebGoat",
+      "securityCategory": "others",
+      "vulnerabilityProbability": "LOW",
+      "status": "TO_REVIEW",
+      "line": 76,
+      "message": "Make sure that expanding this archive file is safe here.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 76,
+        "endLine": 76,
+        "startOffset": 52,
+        "endOffset": 59
+      },
+      "flows": [],
+      "ruleKey": "java:S5042",
+      "messageFormattings": []
+    },
+    {
+      "key": "a28936f5-5b74-4789-b438-3302f73598aa",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/cryptography/HashingAssignment.java",
+      "project": "WebGoat",
+      "securityCategory": "others",
+      "vulnerabilityProbability": "LOW",
+      "status": "TO_REVIEW",
+      "line": 39,
+      "message": "Make sure this weak hash algorithm is not used in a sensitive context here.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 39,
+        "endLine": 39,
+        "startOffset": 39,
+        "endOffset": 50
+      },
+      "flows": [],
+      "ruleKey": "java:S4790",
+      "messageFormattings": []
+    },
+    {
+      "key": "30be08a3-b6e9-462a-a3ee-8f7ccdd4a149",
+      "component": "WebGoat:src/it/java/org/owasp/webgoat/integration/SqlInjectionMitigationIntegrationTest.java",
+      "project": "WebGoat",
+      "securityCategory": "others",
+      "vulnerabilityProbability": "LOW",
+      "status": "TO_REVIEW",
+      "line": 84,
+      "message": "Make sure using this hardcoded IP address is safe here.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 84,
+        "endLine": 84,
+        "startOffset": 21,
+        "endOffset": 38
+      },
+      "flows": [],
+      "ruleKey": "java:S1313",
+      "messageFormattings": []
+    },
+    {
+      "key": "c36a13a2-88db-4e90-8bae-af5237167b63",
+      "component": "WebGoat:src/test/java/org/owasp/webgoat/lessons/sqlinjection/mitigation/SqlInjectionLesson13Test.java",
+      "project": "WebGoat",
+      "securityCategory": "others",
+      "vulnerabilityProbability": "LOW",
+      "status": "TO_REVIEW",
+      "line": 128,
+      "message": "Make sure using this hardcoded IP address is safe here.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 128,
+        "endLine": 128,
+        "startOffset": 29,
+        "endOffset": 46
+      },
+      "flows": [],
+      "ruleKey": "java:S1313",
+      "messageFormattings": []
+    },
+    {
+      "key": "6c18d8f4-ab76-484b-9c9c-3b1be6e986d0",
+      "component": "WebGoat:src/test/java/org/owasp/webgoat/lessons/sqlinjection/mitigation/SqlInjectionLesson13Test.java",
+      "project": "WebGoat",
+      "securityCategory": "others",
+      "vulnerabilityProbability": "LOW",
+      "status": "TO_REVIEW",
+      "line": 138,
+      "message": "Make sure using this hardcoded IP address is safe here.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2022-04-09T06:56:12-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 138,
+        "endLine": 138,
+        "startOffset": 29,
+        "endOffset": 46
+      },
+      "flows": [],
+      "ruleKey": "java:S1313",
+      "messageFormattings": []
+    },
+    {
+      "key": "8a3ac76c-737e-45ce-80d9-f8977374572c",
+      "component": "WebGoat:src/main/java/org/owasp/webgoat/lessons/pathtraversal/ProfileZipSlip.java",
+      "project": "WebGoat",
+      "securityCategory": "others",
+      "vulnerabilityProbability": "LOW",
+      "status": "TO_REVIEW",
+      "line": 67,
+      "message": "Make sure publicly writable directories are used safely here.",
+      "author": "nanne.baars@owasp.org",
+      "creationDate": "2024-10-26T02:54:21-0600",
+      "updateDate": "2025-02-23T01:58:07-0700",
+      "textRange": {
+        "startLine": 67,
+        "endLine": 67,
+        "startOffset": 26,
+        "endOffset": 61
+      },
+      "flows": [],
+      "ruleKey": "java:S5443",
+      "messageFormattings": []
+    }
+  ],
+  "components": [
+    {
+      "key": "WebGoat:src/main/java/org/owasp/webgoat/lessons/missingac/MissingFunctionAC.java",
+      "qualifier": "FIL",
+      "name": "MissingFunctionAC.java",
+      "longName": "src/main/java/org/owasp/webgoat/lessons/missingac/MissingFunctionAC.java",
+      "path": "src/main/java/org/owasp/webgoat/lessons/missingac/MissingFunctionAC.java"
+    },
+    {
+      "key": "WebGoat:src/it/java/org/owasp/webgoat/integration/GeneralLessonIntegrationTest.java",
+      "qualifier": "FIL",
+      "name": "GeneralLessonIntegrationTest.java",
+      "longName": "src/it/java/org/owasp/webgoat/integration/GeneralLessonIntegrationTest.java",
+      "path": "src/it/java/org/owasp/webgoat/integration/GeneralLessonIntegrationTest.java"
+    },
+    {
+      "key": "WebGoat:src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson10.java",
+      "qualifier": "FIL",
+      "name": "SqlInjectionLesson10.java",
+      "longName": "src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson10.java",
+      "path": "src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson10.java"
+    },
+    {
+      "key": "WebGoat:src/main/resources/lessons/httpbasics/html/HttpBasics.html",
+      "qualifier": "FIL",
+      "name": "HttpBasics.html",
+      "longName": "src/main/resources/lessons/httpbasics/html/HttpBasics.html",
+      "path": "src/main/resources/lessons/httpbasics/html/HttpBasics.html"
+    },
+    {
+      "key": "WebGoat:src/it/java/org/owasp/webgoat/integration/LabelAndHintIntegrationTest.java",
+      "qualifier": "FIL",
+      "name": "LabelAndHintIntegrationTest.java",
+      "longName": "src/it/java/org/owasp/webgoat/integration/LabelAndHintIntegrationTest.java",
+      "path": "src/it/java/org/owasp/webgoat/integration/LabelAndHintIntegrationTest.java"
+    },
+    {
+      "key": "WebGoat:src/main/java/org/owasp/webgoat/lessons/xss/CrossSiteScriptingLesson5a.java",
+      "qualifier": "FIL",
+      "name": "CrossSiteScriptingLesson5a.java",
+      "longName": "src/main/java/org/owasp/webgoat/lessons/xss/CrossSiteScriptingLesson5a.java",
+      "path": "src/main/java/org/owasp/webgoat/lessons/xss/CrossSiteScriptingLesson5a.java"
+    },
+    {
+      "key": "WebGoat:src/test/java/org/owasp/webgoat/lessons/jwt/claimmisuse/JWTHeaderKIDEndpointTest.java",
+      "qualifier": "FIL",
+      "name": "JWTHeaderKIDEndpointTest.java",
+      "longName": "src/test/java/org/owasp/webgoat/lessons/jwt/claimmisuse/JWTHeaderKIDEndpointTest.java",
+      "path": "src/test/java/org/owasp/webgoat/lessons/jwt/claimmisuse/JWTHeaderKIDEndpointTest.java"
+    },
+    {
+      "key": "WebGoat:src/main/java/org/owasp/webgoat/lessons/sqlinjection/advanced/SqlInjectionLesson6a.java",
+      "qualifier": "FIL",
+      "name": "SqlInjectionLesson6a.java",
+      "longName": "src/main/java/org/owasp/webgoat/lessons/sqlinjection/advanced/SqlInjectionLesson6a.java",
+      "path": "src/main/java/org/owasp/webgoat/lessons/sqlinjection/advanced/SqlInjectionLesson6a.java"
+    },
+    {
+      "key": "WebGoat:src/test/java/org/owasp/webgoat/lessons/deserialization/DeserializeTest.java",
+      "qualifier": "FIL",
+      "name": "DeserializeTest.java",
+      "longName": "src/test/java/org/owasp/webgoat/lessons/deserialization/DeserializeTest.java",
+      "path": "src/test/java/org/owasp/webgoat/lessons/deserialization/DeserializeTest.java"
+    },
+    {
+      "key": "WebGoat:src/main/java/org/owasp/webgoat/lessons/cryptography/EncodingAssignment.java",
+      "qualifier": "FIL",
+      "name": "EncodingAssignment.java",
+      "longName": "src/main/java/org/owasp/webgoat/lessons/cryptography/EncodingAssignment.java",
+      "path": "src/main/java/org/owasp/webgoat/lessons/cryptography/EncodingAssignment.java"
+    },
+    {
+      "key": "WebGoat:src/it/java/org/owasp/webgoat/integration/IDORIntegrationTest.java",
+      "qualifier": "FIL",
+      "name": "IDORIntegrationTest.java",
+      "longName": "src/it/java/org/owasp/webgoat/integration/IDORIntegrationTest.java",
+      "path": "src/it/java/org/owasp/webgoat/integration/IDORIntegrationTest.java"
+    },
+    {
+      "key": "WebGoat:src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson9.java",
+      "qualifier": "FIL",
+      "name": "SqlInjectionLesson9.java",
+      "longName": "src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson9.java",
+      "path": "src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson9.java"
+    },
+    {
+      "key": "WebGoat:src/main/java/org/owasp/webgoat/container/LessonResourceScanner.java",
+      "qualifier": "FIL",
+      "name": "LessonResourceScanner.java",
+      "longName": "src/main/java/org/owasp/webgoat/container/LessonResourceScanner.java",
+      "path": "src/main/java/org/owasp/webgoat/container/LessonResourceScanner.java"
+    },
+    {
+      "key": "WebGoat:src/main/java/org/owasp/webgoat/lessons/hijacksession/cas/HijackSessionAuthenticationProvider.java",
+      "qualifier": "FIL",
+      "name": "HijackSessionAuthenticationProvider.java",
+      "longName": "src/main/java/org/owasp/webgoat/lessons/hijacksession/cas/HijackSessionAuthenticationProvider.java",
+      "path": "src/main/java/org/owasp/webgoat/lessons/hijacksession/cas/HijackSessionAuthenticationProvider.java"
+    },
+    {
+      "key": "WebGoat:src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson5b.java",
+      "qualifier": "FIL",
+      "name": "SqlInjectionLesson5b.java",
+      "longName": "src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson5b.java",
+      "path": "src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson5b.java"
+    },
+    {
+      "key": "WebGoat:src/main/java/org/owasp/webgoat/lessons/cryptography/HashingAssignment.java",
+      "qualifier": "FIL",
+      "name": "HashingAssignment.java",
+      "longName": "src/main/java/org/owasp/webgoat/lessons/cryptography/HashingAssignment.java",
+      "path": "src/main/java/org/owasp/webgoat/lessons/cryptography/HashingAssignment.java"
+    },
+    {
+      "key": "WebGoat:src/main/java/org/owasp/webgoat/container/lessons/LessonConnectionInvocationHandler.java",
+      "qualifier": "FIL",
+      "name": "LessonConnectionInvocationHandler.java",
+      "longName": "src/main/java/org/owasp/webgoat/container/lessons/LessonConnectionInvocationHandler.java",
+      "path": "src/main/java/org/owasp/webgoat/container/lessons/LessonConnectionInvocationHandler.java"
+    },
+    {
+      "key": "WebGoat:src/main/java/org/owasp/webgoat/lessons/challenges/challenge7/PasswordResetLink.java",
+      "qualifier": "FIL",
+      "name": "PasswordResetLink.java",
+      "longName": "src/main/java/org/owasp/webgoat/lessons/challenges/challenge7/PasswordResetLink.java",
+      "path": "src/main/java/org/owasp/webgoat/lessons/challenges/challenge7/PasswordResetLink.java"
+    },
+    {
+      "key": "WebGoat:src/test/java/org/owasp/webgoat/container/report/ReportCardControllerTest.java",
+      "qualifier": "FIL",
+      "name": "ReportCardControllerTest.java",
+      "longName": "src/test/java/org/owasp/webgoat/container/report/ReportCardControllerTest.java",
+      "path": "src/test/java/org/owasp/webgoat/container/report/ReportCardControllerTest.java"
+    },
+    {
+      "key": "WebGoat:src/main/resources/webgoat/static/js/jquery_form/jquery.form.js",
+      "qualifier": "FIL",
+      "name": "jquery.form.js",
+      "longName": "src/main/resources/webgoat/static/js/jquery_form/jquery.form.js",
+      "path": "src/main/resources/webgoat/static/js/jquery_form/jquery.form.js"
+    },
+    {
+      "key": "WebGoat:src/main/resources/lessons/jwt/js/jwt-refresh.js",
+      "qualifier": "FIL",
+      "name": "jwt-refresh.js",
+      "longName": "src/main/resources/lessons/jwt/js/jwt-refresh.js",
+      "path": "src/main/resources/lessons/jwt/js/jwt-refresh.js"
+    },
+    {
+      "key": "WebGoat:src/main/java/org/owasp/webgoat/lessons/sqlinjection/advanced/SqlInjectionLesson6b.java",
+      "qualifier": "FIL",
+      "name": "SqlInjectionLesson6b.java",
+      "longName": "src/main/java/org/owasp/webgoat/lessons/sqlinjection/advanced/SqlInjectionLesson6b.java",
+      "path": "src/main/java/org/owasp/webgoat/lessons/sqlinjection/advanced/SqlInjectionLesson6b.java"
+    },
+    {
+      "key": "WebGoat:src/main/resources/webgoat/static/js/goatApp/model/LessonContentModel.js",
+      "qualifier": "FIL",
+      "name": "LessonContentModel.js",
+      "longName": "src/main/resources/webgoat/static/js/goatApp/model/LessonContentModel.js",
+      "path": "src/main/resources/webgoat/static/js/goatApp/model/LessonContentModel.js"
+    },
+    {
+      "key": "WebGoat:src/main/java/org/owasp/webgoat/lessons/insecurelogin/InsecureLoginTask.java",
+      "qualifier": "FIL",
+      "name": "InsecureLoginTask.java",
+      "longName": "src/main/java/org/owasp/webgoat/lessons/insecurelogin/InsecureLoginTask.java",
+      "path": "src/main/java/org/owasp/webgoat/lessons/insecurelogin/InsecureLoginTask.java"
+    },
+    {
+      "key": "WebGoat:src/main/resources/webgoat/static/js/libs/mode-java.js",
+      "qualifier": "FIL",
+      "name": "mode-java.js",
+      "longName": "src/main/resources/webgoat/static/js/libs/mode-java.js",
+      "path": "src/main/resources/webgoat/static/js/libs/mode-java.js"
+    },
+    {
+      "key": "WebGoat:src/main/java/org/owasp/webgoat/lessons/jwt/JWTSecretKeyEndpoint.java",
+      "qualifier": "FIL",
+      "name": "JWTSecretKeyEndpoint.java",
+      "longName": "src/main/java/org/owasp/webgoat/lessons/jwt/JWTSecretKeyEndpoint.java",
+      "path": "src/main/java/org/owasp/webgoat/lessons/jwt/JWTSecretKeyEndpoint.java"
+    },
+    {
+      "key": "WebGoat:src/main/resources/webgoat/static/js/libs/text.js",
+      "qualifier": "FIL",
+      "name": "text.js",
+      "longName": "src/main/resources/webgoat/static/js/libs/text.js",
+      "path": "src/main/resources/webgoat/static/js/libs/text.js"
+    },
+    {
+      "key": "WebGoat:src/main/java/org/owasp/webgoat/lessons/sqlinjection/mitigation/Servers.java",
+      "qualifier": "FIL",
+      "name": "Servers.java",
+      "longName": "src/main/java/org/owasp/webgoat/lessons/sqlinjection/mitigation/Servers.java",
+      "path": "src/main/java/org/owasp/webgoat/lessons/sqlinjection/mitigation/Servers.java"
+    },
+    {
+      "key": "WebGoat:src/test/java/org/owasp/webgoat/webwolf/user/UserServiceTest.java",
+      "qualifier": "FIL",
+      "name": "UserServiceTest.java",
+      "longName": "src/test/java/org/owasp/webgoat/webwolf/user/UserServiceTest.java",
+      "path": "src/test/java/org/owasp/webgoat/webwolf/user/UserServiceTest.java"
+    },
+    {
+      "key": "WebGoat:src/main/java/org/owasp/webgoat/lessons/jwt/JWTRefreshEndpoint.java",
+      "qualifier": "FIL",
+      "name": "JWTRefreshEndpoint.java",
+      "longName": "src/main/java/org/owasp/webgoat/lessons/jwt/JWTRefreshEndpoint.java",
+      "path": "src/main/java/org/owasp/webgoat/lessons/jwt/JWTRefreshEndpoint.java"
+    },
+    {
+      "key": "WebGoat:src/main/java/org/owasp/webgoat/lessons/sqlinjection/mitigation/SqlInjectionLesson10b.java",
+      "qualifier": "FIL",
+      "name": "SqlInjectionLesson10b.java",
+      "longName": "src/main/java/org/owasp/webgoat/lessons/sqlinjection/mitigation/SqlInjectionLesson10b.java",
+      "path": "src/main/java/org/owasp/webgoat/lessons/sqlinjection/mitigation/SqlInjectionLesson10b.java"
+    },
+    {
+      "key": "WebGoat:src/main/java/org/owasp/webgoat/lessons/challenges/challenge7/Assignment7.java",
+      "qualifier": "FIL",
+      "name": "Assignment7.java",
+      "longName": "src/main/java/org/owasp/webgoat/lessons/challenges/challenge7/Assignment7.java",
+      "path": "src/main/java/org/owasp/webgoat/lessons/challenges/challenge7/Assignment7.java"
+    },
+    {
+      "key": "WebGoat:src/main/resources/webgoat/static/js/libs/jquery.form.js",
+      "qualifier": "FIL",
+      "name": "jquery.form.js",
+      "longName": "src/main/resources/webgoat/static/js/libs/jquery.form.js",
+      "path": "src/main/resources/webgoat/static/js/libs/jquery.form.js"
+    },
+    {
+      "key": "WebGoat:src/main/java/org/owasp/webgoat/lessons/challenges/challenge1/ImageServlet.java",
+      "qualifier": "FIL",
+      "name": "ImageServlet.java",
+      "longName": "src/main/java/org/owasp/webgoat/lessons/challenges/challenge1/ImageServlet.java",
+      "path": "src/main/java/org/owasp/webgoat/lessons/challenges/challenge1/ImageServlet.java"
+    },
+    {
+      "key": "WebGoat:src/main/java/org/owasp/webgoat/lessons/idor/IDORLogin.java",
+      "qualifier": "FIL",
+      "name": "IDORLogin.java",
+      "longName": "src/main/java/org/owasp/webgoat/lessons/idor/IDORLogin.java",
+      "path": "src/main/java/org/owasp/webgoat/lessons/idor/IDORLogin.java"
+    },
+    {
+      "key": "WebGoat:src/main/java/org/owasp/webgoat/lessons/ssrf/SSRFTask1.java",
+      "qualifier": "FIL",
+      "name": "SSRFTask1.java",
+      "longName": "src/main/java/org/owasp/webgoat/lessons/ssrf/SSRFTask1.java",
+      "path": "src/main/java/org/owasp/webgoat/lessons/ssrf/SSRFTask1.java"
+    },
+    {
+      "key": "WebGoat:src/main/resources/lessons/chromedevtools/html/ChromeDevTools.html",
+      "qualifier": "FIL",
+      "name": "ChromeDevTools.html",
+      "longName": "src/main/resources/lessons/chromedevtools/html/ChromeDevTools.html",
+      "path": "src/main/resources/lessons/chromedevtools/html/ChromeDevTools.html"
+    },
+    {
+      "key": "WebGoat:src/test/java/org/owasp/webgoat/lessons/spoofcookie/SpoofCookieAssignmentTest.java",
+      "qualifier": "FIL",
+      "name": "SpoofCookieAssignmentTest.java",
+      "longName": "src/test/java/org/owasp/webgoat/lessons/spoofcookie/SpoofCookieAssignmentTest.java",
+      "path": "src/test/java/org/owasp/webgoat/lessons/spoofcookie/SpoofCookieAssignmentTest.java"
+    },
+    {
+      "key": "WebGoat:src/main/java/org/owasp/webgoat/lessons/sqlinjection/advanced/SqlInjectionChallenge.java",
+      "qualifier": "FIL",
+      "name": "SqlInjectionChallenge.java",
+      "longName": "src/main/java/org/owasp/webgoat/lessons/sqlinjection/advanced/SqlInjectionChallenge.java",
+      "path": "src/main/java/org/owasp/webgoat/lessons/sqlinjection/advanced/SqlInjectionChallenge.java"
+    },
+    {
+      "key": "WebGoat:src/it/java/org/owasp/webgoat/integration/CryptoIntegrationTest.java",
+      "qualifier": "FIL",
+      "name": "CryptoIntegrationTest.java",
+      "longName": "src/it/java/org/owasp/webgoat/integration/CryptoIntegrationTest.java",
+      "path": "src/it/java/org/owasp/webgoat/integration/CryptoIntegrationTest.java"
+    },
+    {
+      "key": "WebGoat:src/test/java/org/owasp/webgoat/lessons/hijacksession/HijackSessionAssignmentTest.java",
+      "qualifier": "FIL",
+      "name": "HijackSessionAssignmentTest.java",
+      "longName": "src/test/java/org/owasp/webgoat/lessons/hijacksession/HijackSessionAssignmentTest.java",
+      "path": "src/test/java/org/owasp/webgoat/lessons/hijacksession/HijackSessionAssignmentTest.java"
+    },
+    {
+      "key": "WebGoat:src/test/java/org/owasp/webgoat/lessons/challenges/Assignment1Test.java",
+      "qualifier": "FIL",
+      "name": "Assignment1Test.java",
+      "longName": "src/test/java/org/owasp/webgoat/lessons/challenges/Assignment1Test.java",
+      "path": "src/test/java/org/owasp/webgoat/lessons/challenges/Assignment1Test.java"
+    },
+    {
+      "key": "WebGoat:src/main/resources/webgoat/static/plugins/bootstrap-wysihtml5/js/wysihtml5-0.3.0.js",
+      "qualifier": "FIL",
+      "name": "wysihtml5-0.3.0.js",
+      "longName": "src/main/resources/webgoat/static/plugins/bootstrap-wysihtml5/js/wysihtml5-0.3.0.js",
+      "path": "src/main/resources/webgoat/static/plugins/bootstrap-wysihtml5/js/wysihtml5-0.3.0.js"
+    },
+    {
+      "key": "WebGoat:src/test/java/org/owasp/webgoat/lessons/sqlinjection/mitigation/SqlInjectionLesson13Test.java",
+      "qualifier": "FIL",
+      "name": "SqlInjectionLesson13Test.java",
+      "longName": "src/test/java/org/owasp/webgoat/lessons/sqlinjection/mitigation/SqlInjectionLesson13Test.java",
+      "path": "src/test/java/org/owasp/webgoat/lessons/sqlinjection/mitigation/SqlInjectionLesson13Test.java"
+    },
+    {
+      "key": "WebGoat:src/main/java/org/owasp/webgoat/lessons/csrf/CSRFGetFlag.java",
+      "qualifier": "FIL",
+      "name": "CSRFGetFlag.java",
+      "longName": "src/main/java/org/owasp/webgoat/lessons/csrf/CSRFGetFlag.java",
+      "path": "src/main/java/org/owasp/webgoat/lessons/csrf/CSRFGetFlag.java"
+    },
+    {
+      "key": "WebGoat:src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson8.java",
+      "qualifier": "FIL",
+      "name": "SqlInjectionLesson8.java",
+      "longName": "src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson8.java",
+      "path": "src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson8.java"
+    },
+    {
+      "key": "WebGoat:src/main/java/org/owasp/webgoat/lessons/pathtraversal/ProfileZipSlip.java",
+      "qualifier": "FIL",
+      "name": "ProfileZipSlip.java",
+      "longName": "src/main/java/org/owasp/webgoat/lessons/pathtraversal/ProfileZipSlip.java",
+      "path": "src/main/java/org/owasp/webgoat/lessons/pathtraversal/ProfileZipSlip.java"
+    },
+    {
+      "key": "WebGoat:src/main/java/org/owasp/webgoat/lessons/challenges/SolutionConstants.java",
+      "qualifier": "FIL",
+      "name": "SolutionConstants.java",
+      "longName": "src/main/java/org/owasp/webgoat/lessons/challenges/SolutionConstants.java",
+      "path": "src/main/java/org/owasp/webgoat/lessons/challenges/SolutionConstants.java"
+    },
+    {
+      "key": "WebGoat:src/main/java/org/owasp/webgoat/lessons/challenges/challenge5/Assignment5.java",
+      "qualifier": "FIL",
+      "name": "Assignment5.java",
+      "longName": "src/main/java/org/owasp/webgoat/lessons/challenges/challenge5/Assignment5.java",
+      "path": "src/main/java/org/owasp/webgoat/lessons/challenges/challenge5/Assignment5.java"
+    },
+    {
+      "key": "WebGoat:src/main/java/org/owasp/webgoat/lessons/passwordreset/ResetLinkAssignment.java",
+      "qualifier": "FIL",
+      "name": "ResetLinkAssignment.java",
+      "longName": "src/main/java/org/owasp/webgoat/lessons/passwordreset/ResetLinkAssignment.java",
+      "path": "src/main/java/org/owasp/webgoat/lessons/passwordreset/ResetLinkAssignment.java"
+    },
+    {
+      "key": "WebGoat:src/test/java/org/owasp/webgoat/lessons/jwt/JWTRefreshEndpointTest.java",
+      "qualifier": "FIL",
+      "name": "JWTRefreshEndpointTest.java",
+      "longName": "src/test/java/org/owasp/webgoat/lessons/jwt/JWTRefreshEndpointTest.java",
+      "path": "src/test/java/org/owasp/webgoat/lessons/jwt/JWTRefreshEndpointTest.java"
+    },
+    {
+      "key": "WebGoat",
+      "qualifier": "TRK",
+      "name": "WebGoat",
+      "longName": "WebGoat"
+    },
+    {
+      "key": "WebGoat:src/main/java/org/owasp/webgoat/lessons/jwt/claimmisuse/JWTHeaderKIDEndpoint.java",
+      "qualifier": "FIL",
+      "name": "JWTHeaderKIDEndpoint.java",
+      "longName": "src/main/java/org/owasp/webgoat/lessons/jwt/claimmisuse/JWTHeaderKIDEndpoint.java",
+      "path": "src/main/java/org/owasp/webgoat/lessons/jwt/claimmisuse/JWTHeaderKIDEndpoint.java"
+    },
+    {
+      "key": "WebGoat:src/it/java/org/owasp/webgoat/integration/SqlInjectionMitigationIntegrationTest.java",
+      "qualifier": "FIL",
+      "name": "SqlInjectionMitigationIntegrationTest.java",
+      "longName": "src/it/java/org/owasp/webgoat/integration/SqlInjectionMitigationIntegrationTest.java",
+      "path": "src/it/java/org/owasp/webgoat/integration/SqlInjectionMitigationIntegrationTest.java"
+    }
+  ]
+}
