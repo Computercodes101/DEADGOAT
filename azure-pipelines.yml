@@ -5,7 +5,7 @@ trigger:
 - main
 
 pool:
-  name: 'Azure Pipelines'
+  vmImage: ubuntu-latest
 
 steps:
 - checkout: self
