@@ -5,7 +5,8 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  # vmImage: ubuntu-latest
+  name: pilotrakc
 
 steps:
 - checkout: self
@@ -31,6 +32,10 @@ steps:
     extraProperties: |
       sonar.projectKey=pilot1782_DEADGOAT
       sonar.projectName=DEADGOAT
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: 'mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install-deps"'
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
