@@ -22,7 +22,7 @@ steps:
     jdkArchitectureOption: 'x64'
     jdkSourceOption: 'LocalDirectory'
     jdkFile: '$(Build.SourcesDirectory)/openjdk-23.0.2_linux-x64_bin.tar.gz'
-    jdkDestinationDirectory: '$(Build.SourcesDirectory)/open-jdk'
+    jdkDestinationDirectory: '$(Build.BinariesDirectory)/open-jdk'
     cleanDestinationDirectory: true
 - task: NodeTool@0
   inputs:
