@@ -51,6 +51,19 @@ steps:
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
+    goals: 'spotless:apply'
+    options: '-X -e'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: true
+    sqMavenPluginVersionChoice: 'latest'
+- task: Maven@4
+  inputs:
+    mavenPomFile: 'pom.xml'
     goals: 'clean install spotless:apply'
     options: '-X -e'
     publishJUnitResults: true
