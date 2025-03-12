@@ -51,7 +51,7 @@ steps:
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
-    goals: 'spotless:apply'
+    goals: 'verify'
     options: '-X -e'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
