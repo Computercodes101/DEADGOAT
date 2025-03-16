@@ -5,7 +5,8 @@ trigger:
 - main
 
 pool:
-  name: pilotrakc
+  vmImage: ubuntu-latest
+  # name: pilotrakc
 
 steps:
 - checkout: self
@@ -21,8 +22,20 @@ steps:
     jdkArchitectureOption: 'x64'
     jdkSourceOption: 'LocalDirectory'
     jdkFile: '$(Build.SourcesDirectory)/openjdk-23.0.2_linux-x64_bin.tar.gz'
-    jdkDestinationDirectory: '$(Build.SourcesDirectory)/open-jdk'
+    jdkDestinationDirectory: '$(Build.BinariesDirectory)/open-jdk'
     cleanDestinationDirectory: true
+- task: NodeTool@0
+  inputs:
+    versionSpec: '18'
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      npm ci
+      npx playwright install --with-deps
+      npx playwright test
+      export CI="true"
+
 - task: SonarCloudPrepare@3
   inputs:
     SonarQube: 'SonarQube'
@@ -31,6 +44,19 @@ steps:
     extraProperties: |
       sonar.projectKey=pilot1782_DEADGOAT
       sonar.projectName=DEADGOAT
+- task: Maven@4
+  inputs:
+    mavenPomFile: 'pom.xml'
+    goals: 'verify'
+    options: '-X -e'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: true
+    sqMavenPluginVersionChoice: 'latest'
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
