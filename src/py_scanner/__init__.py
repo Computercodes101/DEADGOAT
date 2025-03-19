@@ -3,66 +3,87 @@ alksdjdh
 """
 import json
 import os
+import re
+
+def os_ify_path(path: str) -> str:
+    """
+    Swaps "/" for "\" and vise versa as os appropriate
+    :param path:
+    :return:
+    """
+
+    if os.name == "nt":
+        return path.replace("/", "\\")
+    return path.replace("\\", "/")
+
 #Unfamiliar with the "flows" section, sorry
-hotspots = json.loads(open('../../example_hotspots.json', 'r').read())["hotspots"]
+cur_file = os_ify_path(os.path.dirname(os.path.realpath(__file__)))
+src_dir = os_ify_path(os.path.split(cur_file)[0])
+root_dir = os_ify_path(os.path.split(src_dir)[0])
+print(src_dir)
+hotspots = json.loads(
+    open(
+        os.path.join(
+            src_dir,
+            "example_hotspots.json"
+        ),
+        'r'
+    ).read()
+)["hotspots"]
 
-#print(len(hotspots), hotspots[0])
+def parse_spot(spot: dict) -> str:
+    """
+    Given a hotspot as a dictionary, parse it and return the relevant code
 
-#pretty_hotdump = json.dumps(hotspots[0], indent=4)
-#print(pretty_hotdump) #visual assistance
+    :param spot: The hotspot from the list
+    :return: The text of the function containing the hotspot
+    """
 
-#components = set()
-#for hot in hotspots:
-#    components.add(hot["component"][:hot["component"].index('/', hot["component"].index('/')+1)])
-#print(components) # THIS RETURNS {'.html', '.java', '.js'}
+    file_path = spot["component"].split(":")[1]
+    file_path = os_ify_path(os.path.join(root_dir, file_path))
+    msg = spot["message"]
+    blame = spot["author"]
+    rule_key = spot["ruleKey"]
+    with open(file_path, "r") as f:
+        text = f.read()
+    print(f"{msg} of type {rule_key} in {file_path} written by {blame}")
 
-#TODO: Grab the actual line of vulnerable code from each hotspot.
-errorFileContents = {}
+    function_regex = re.compile(
+        r"\w*\s+"  # return type
+        r"\w+\s*"  # function name
+        r"\([^)]*\)\s*"  # function parameters
+        r"\w*\s\w*\s"  # throw type
+        r"\{",  # start of function
+        re.MULTILINE,
+    )
+    lines = text.split("\n")
+    start_line = 0
 
-# webGoatDir = os.fsencode("../test/java/org/owasp/webgoat/")
-# print(os.listdir(webGoatDir))
-# for subDir in os.listdir(webGoatDir):
-#     if subDir == b'WithWebGoatUser.java': continue
-#     subDirPath = "../test/java/org/owasp/webgoat/" + os.fsdecode(subDir) + "/"
-#     for folder in os.listdir(os.fsencode(subDirPath)):
-#         if os.fsdecode(folder).__contains__("."): continue
-#         folderPath = os.fsdecode(subDirPath) + os.fsdecode(folder) + "/" #eg. ../test/java/org/owasp/webgoat/webwolf/user/
-#         for file in os.listdir(os.fsencode(folderPath)):
-#             fileName = os.fsdecode(file) #eg. "UserServiceTest.java"
-#             if fileName.endswith(".html") or fileName.endswith(".java") or fileName.endswith(".js"):
-#                 with open(folderPath + fileName, 'r') as f:
-#                     errorFileContents[fileName] = f.readlines() #reads every code file in the folders
-#             elif not(fileName.__contains__(".")): #catch for subfolders
-#                 realFolderPath = folderPath + fileName + "/"
-#                 for realFile in os.listdir(os.fsencode(realFolderPath)):
-#                     realFileName = os.fsdecode(realFile)
-#                     if realFileName.endswith(".html") or realFileName.endswith(".java") or realFileName.endswith(".js"):
-#                         with open(realFolderPath + realFileName, 'r') as f:
-#                             errorFileContents[realFileName] = f.readlines()
+    # start at line "spot['line']" and work backwards until a line matches
+    for i in range(spot["line"], -1, -1):
+        line = lines[i]
+        if len(function_regex.findall(line)) > 0:
+            start_line = i
+            break
 
-#This should read every relevant code file into errorFileContents.
-for subdir, dirs, files in os.walk("..\\"):
-    for file in files:
-        if file.endswith((".html", ".js", ".java")):
-            isInHotspot = False
-            for hot in hotspots:
-                hotFileName = hot["component"][hot["component"].rindex('/')+1:]
-                if file == hotFileName:
-                    isInHotspot = True
-                    break
-            if isInHotspot:
-                filepath = os.path.join(subdir, file)
-                with open(filepath, 'r') as f:
-                    errorFileContents[file] = f.readlines()
+    # work our way down the function until we have closed all parenthesis
+    rem_paren = 0
+    end_line = 0
+    for i in range(start_line, len(lines)):
+        line = lines[i]
+        rem_paren += line.count("{")
+        rem_paren -= line.count("}")
+        if rem_paren == 0:
+            end_line = i
+            break
 
-#print(errorFileContents["DeserializeTest.java"][58])
+    end_line = min(end_line, len(lines) - 1)
 
-#This should add a new key-pair to each hotspot that contains the associated vulnerable lines.
-for hot in hotspots:
-    fileName = hot["component"][hot["component"].rindex('/')+1:]
-    startLineIndex = hot["textRange"]["startLine"]-1 #FYI, 0 indexing stuff means the actual index needs to shift by 1
-    endLineIndex = hot["textRange"]["endLine"]-1
-    hot["vulnerableLines"] = errorFileContents[fileName][startLineIndex:endLineIndex+1]
-print("Success!")
-print(hotspots[0]["vulnerableLines"]) #We are still left with whitespace. This can be modified as you see fit.
+    print(f"Violating function at line(s) {start_line + 1}:{end_line + 1}  \\/")
 
+    fun_text = "\n".join(lines[start_line:end_line + 1])
+    print(fun_text)
+
+    return fun_text
+
+parse_spot(hotspots[0])
