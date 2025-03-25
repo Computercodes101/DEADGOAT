@@ -1,7 +1,9 @@
-import json
 import os
 import re
+import random
+
 import ollama
+import requests
 
 def os_ify_path(path: str) -> str:
     """
@@ -18,13 +20,32 @@ def os_ify_path(path: str) -> str:
 cur_file = os_ify_path(os.path.dirname(os.path.realpath(__file__)))
 src_dir = os_ify_path(os.path.split(cur_file)[0])
 root_dir = os_ify_path(os.path.split(src_dir)[0])
-print(src_dir)
-hotspots = json.loads(
-    open(os.path.join(
-        src_dir,
-        "example_hotspots.json"
-    )).read()
-)["hotspots"]
+# print(src_dir)
+# hotspots = json.loads(
+#     open(os.path.join(
+#         src_dir,
+#         "example_hotspots.json"
+#     )).read()
+# )["hotspots"]
+
+base_uri = "https://sonarcloud.io/"
+headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": f"Bearer {os.environ['SONARQUBE_API']}"
+}
+
+hotspots = requests.get(
+    base_uri + "api/hotspots/search",
+    headers=headers,
+    params={
+        "projectKey": os.environ["SONARQUBE_PROJECT_KEY"],
+        "ps": 100,
+        "status": "TO_REVIEW",
+        "deprecated": False,
+        "section":"params",
+    }
+).json()["hotspots"]
 
 def parse_spot(spot: dict) -> tuple[str, str, str]:
     """
@@ -67,7 +88,6 @@ def curly_context(text: list[str], start: int) -> tuple[int, int]:
 
     :param text: list of text lines
     :param start: start line
-    :param end: end line
     :return: (start, end)
     """
 
@@ -109,10 +129,12 @@ def curly_context(text: list[str], start: int) -> tuple[int, int]:
             break
 
     end_line = min(end_line, len(text) - 1)
+    if end_line == 0:
+        end_line = len(text) - 1
 
     return start_line, end_line
 
-spot = hotspots[-5]
+spot = random.choice(hotspots)
 
 text, line, imp = parse_spot(spot)
 
