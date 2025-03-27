@@ -1,7 +1,9 @@
 import os
 import re
 import random
+import time
 
+import httpx
 import ollama
 import requests
 
@@ -134,9 +136,6 @@ def curly_context(text: list[str], start: int) -> tuple[int, int]:
 
     return start_line, end_line
 
-spot = random.choice(hotspots)
-
-text, line, imp = parse_spot(spot)
 
 exam = """
 Here is an example user message:
@@ -242,45 +241,129 @@ class Thing {
 }
 """
 
-prompt = (
-    f"The following java snippet contains the vulnerability "
-    f"`{spot['message']}` with a {spot['vulnerabilityProbability']} probability. "
-    f"Fix the issue and format your code response as a markdown code block"
-    f"with the following format contained within `'''`:"
-    f"\n'''\n**Fixed Parent Section**\n"
-    f"```java\n"
-    f"...\n"
-    f"```\n"
-    f"\n**Imports**\n"
-    f"```java\n"
-    f"...\n"
-    f"```\n"
-    f"\n**Explanation**\n"
-    f"...\n'''\n"
-    f"The fixed parent section should not contain the described security "
-    f"vulnerability and should not change any function or class names that "
-    f"already exist in the vulnerable code.\n"
-    f"\nHere is the vulnerable code:\n"
-    f"Vulnerable line:\n```java\n{line}\n```"
-    f"\n\nParent section of the vulnerable line:\n```java\n{text}\n```"
-    f"\n\nCurrent imports:\n```java\n{imp}\n```"
-)
-
 client = ollama.Client(
-    host="http://100.92.185.106:11434",
-)
-response = client.chat(
-    model="llama3.2",
-    messages=[
-        {
-            "role": "user",
-            "content": exam
-        },
-        {
-            "role": "user",
-            "content": prompt,
-        }
-    ]
+    host="https://pilot1782.org/desktop",
+    auth=httpx.BasicAuth(os.environ["OLLAMA_USER"], os.environ["OLLAMA_PASSWORD"]),
 )
 
-print(f"TTR: {response.total_duration / 1e9}s:\n{response.message.content}")
+
+def get_fix(oclient: ollama.Client, hotspot: dict) -> tuple[str, str, str]:
+    """
+    Uses the provided client to generate the fixed parent section.
+    :param oclient: Ollama client
+    :param hotspot: Spot dictionary
+    :return: [<patched parent section>, <new imports>, <explanation>]
+    """
+
+    text, line, imp = parse_spot(hotspot)
+
+    prompt = (
+        f"The following java snippet contains the vulnerability "
+        f"`{hotspot['message']}` with a {hotspot['vulnerabilityProbability']} probability. "
+        f"Fix the issue and format your code response as a markdown code block"
+        f"with the following format contained within `'''`:"
+        f"\n'''\n**Fixed Parent Section**\n"
+        f"```java\n"
+        f"...\n"
+        f"```\n"
+        f"\n**Imports**\n"
+        f"```java\n"
+        f"...\n"
+        f"```\n"
+        f"\n**Explanation**\n"
+        f"...\n'''\n"
+        f"The fixed parent section should not contain the described security "
+        f"vulnerability and should not change any function or class names that "
+        f"already exist in the vulnerable code.\n"
+        f"\nHere is the vulnerable code:\n"
+        f"Vulnerable line:\n```java\n{line}\n```"
+        f"\n\nParent section of the vulnerable line:\n```java\n{text}\n```"
+        f"\n\nCurrent imports:\n```java\n{imp}\n```"
+    )
+
+    for _ in range(3):
+        response = oclient.chat(
+            model="qwen2.5-coder:14b",
+            messages=[
+                {
+                    "role": "user",
+                    "content": exam
+                },
+                {
+                    "role": "user",
+                    "content": prompt,
+                }
+            ]
+        )
+
+        if (
+                all([
+                    i in response.message.content
+                    for i in [
+                        "I'm sorry, but I can't help with that.",
+                        "**Fixed Parent Section**",
+                        "**Explanation**",
+                        "**Imports**",
+                    ]
+                ])
+        ):
+            break
+
+    if "I'm sorry, but I can't help with that" in response.message.content:
+        return text, imp, "No changes were made."
+
+    response_text = response.message.content
+
+    # parse the fixed parent section
+
+    in_section = False
+    fixed_parent_text = ""
+    for line in response_text.splitlines():
+        if "**Fixed Parent Section**" in line:
+            in_section = True
+        if "```" in line and "java" not in line:
+            in_section = False
+
+        if in_section:
+            fixed_parent_text += line + "\n"
+
+    fixed_import_text = ""
+    for line in response_text.splitlines():
+        if "**Imports**" in line:
+            in_section = True
+        if "```" in line and "java" not in line:
+            in_section = False
+
+        if in_section:
+            fixed_import_text += line + "\n"
+
+    explanation_text = ""
+    for line in response_text.splitlines():
+        if "**Explanation**" in line:
+            in_section = True
+
+        if in_section:
+            explanation_text += line + "\n"
+
+    if not fixed_parent_text or not fixed_import_text or not explanation_text:
+        print(f"Text was empty: "
+              f"P:{bool(fixed_parent_text)} "
+              f"I:{bool(fixed_import_text)} "
+              f"E:{bool(explanation_text)}"
+              f"\n{response_text}")
+        return text, imp, "No changes were made."
+
+    return str(fixed_parent_text), str(fixed_import_text), str(explanation_text)
+
+
+times = []
+for _ in range(1):
+    spot = random.choice(hotspots)
+
+    tStart = time.time()
+    _, _, explanation = get_fix(client, spot)
+    tDuration = time.time() - tStart
+    print(f"Patch ({tDuration}s):\n{explanation}")
+    times.append(tDuration)
+
+print(f"\n\n----\nAverage response time: {sum(times) / len(times)}s, Min: {min(times)}, Max: {max(times)}")
