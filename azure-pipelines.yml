@@ -24,9 +24,6 @@ steps:
     jdkFile: '$(Build.SourcesDirectory)/openjdk-23.0.2_linux-x64_bin.tar.gz'
     jdkDestinationDirectory: '$(Build.BinariesDirectory)/open-jdk'
     cleanDestinationDirectory: true
-- task: NodeTool@0
-  inputs:
-    versionSpec: '18'
 
 - task: SonarCloudPrepare@3
   inputs:
