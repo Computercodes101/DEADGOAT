@@ -92,10 +92,11 @@ def curly_context(text: list[str], start: int) -> tuple[int, int]:
     :param start: start line
     :return: (start, end)
     """
-
+    #TODO: 
     function_regex = re.compile(
         r"\w*\s+"  # return type
         r"\w+\s*"  # function name
+        r"(?!(if\s*\()|(catch\s*\())" # negative lookaround - prevents matching (catch) or (if)
         r"\([^)]*\)\s*"  # function parameters
         r"((throws)\s\w+\s)*"  # throw type
         r"\{",  # start of function
