@@ -1,11 +1,12 @@
 import os
-import re
 import random
+import re
 import time
 
 import httpx
 import ollama
 import requests
+
 
 def os_ify_path(path: str) -> str:
     """
@@ -18,7 +19,8 @@ def os_ify_path(path: str) -> str:
         return path.replace("/", "\\")
     return path.replace("\\", "/")
 
-#Unfamiliar with the "flows" section, sorry
+
+# Unfamiliar with the "flows" section, sorry
 cur_file = os_ify_path(os.path.dirname(os.path.realpath(__file__)))
 src_dir = os_ify_path(os.path.split(cur_file)[0])
 root_dir = os_ify_path(os.path.split(src_dir)[0])
@@ -34,7 +36,7 @@ base_uri = "https://sonarcloud.io/"
 headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "Authorization": f"Bearer {os.environ['SONARQUBE_API']}"
+    "Authorization": f"Bearer {os.environ['SONARQUBE_API']}",
 }
 
 hotspots = requests.get(
@@ -45,37 +47,37 @@ hotspots = requests.get(
         "ps": 100,
         "status": "TO_REVIEW",
         "deprecated": False,
-        "section":"params",
-    }
+        "section": "params",
+    },
 ).json()["hotspots"]
 
-def parse_spot(spot: dict) -> tuple[str, str, str]:
+
+def parse_spot(hotspot: dict) -> tuple[str, str, str]:
     """
     Given a hotspot as a dictionary, parse it and return the relevant code
 
     If the
 
-    :param spot: The hotspot from the list
+    :param hotspot: The hotspot from the list
     :return: (<parent object>, <lines>, <file>)
     """
 
-    file_path = spot["component"].split(":")[1]
+    file_path = hotspot["component"].split(":")[1]
     file_path = os_ify_path(os.path.join(root_dir, file_path))
-    msg = spot["message"]
-    blame = spot["author"]
-    rule_key = spot["ruleKey"]
+    msg = hotspot["message"]
+    blame = hotspot["author"]
+    rule_key = hotspot["ruleKey"]
     with open(file_path) as f:
         text = f.read()
     print(f"{msg} of type {rule_key} in {file_path} written by {blame}")
 
-
     lines = text.split("\n")
-    start_line, end_line = curly_context(lines, spot["line"])
+    start_line, end_line = curly_context(lines, hotspot["line"])
 
-    fun_text = "\n".join(lines[start_line:end_line + 1])
+    fun_text = "\n".join(lines[start_line: end_line + 1])
 
     vuln_line = ""
-    i = spot["line"] - 1
+    i = hotspot["line"] - 1
     while not vuln_line.endswith(";") and i < len(lines):
         vuln_line += " " + lines[i].strip()
         i += 1
@@ -83,6 +85,7 @@ def parse_spot(spot: dict) -> tuple[str, str, str]:
     imports = "\n".join(filter(lambda x: "import" in x, lines))
 
     return fun_text, vuln_line, imports
+
 
 def curly_context(text: list[str], start: int) -> tuple[int, int]:
     """
@@ -118,10 +121,11 @@ def curly_context(text: list[str], start: int) -> tuple[int, int]:
     for i in range(start, -1, -1):
         line = text[i]
         if (
-                len(function_regex.findall(line)) +
-                len(class_regex.findall(line)) +
-                len(decorator_regex.findall(line))
-                > 0):
+                len(function_regex.findall(line))
+                + len(class_regex.findall(line))
+                + len(decorator_regex.findall(line))
+                > 0
+        ):
             start_line = i
             break
 
@@ -159,97 +163,106 @@ def get_fix(oclient: ollama.Client, hotspot: dict) -> tuple[str, str, str]:
 
     text, line, imp = parse_spot(hotspot)
 
-    prompt = (
+    ex_prompt = (
         f"The following java snippet contains the vulnerability "
         f"`{hotspot['message']}` with a {hotspot['vulnerabilityProbability']} probability. "
-        f"Fix the issue and format your code response as a markdown code block"
-        f"with the following format contained within `'''`:"
-        f"\n'''\n**Fixed Parent Section**\n"
-        f"```java\n"
-        f"...\n"
-        f"```\n"
-        f"\n**Imports**\n"
-        f"```java\n"
-        f"...\n"
-        f"```\n"
-        f"\n**Explanation**\n"
-        f"...\n'''\n"
-        f"The fixed parent section should not contain the described security "
-        f"vulnerability and should not change any function or class names that "
-        f"already exist in the vulnerable code.\n"
         f"\nHere is the vulnerable code:\n"
         f"Vulnerable line:\n```java\n{line}\n```"
         f"\n\nParent section of the vulnerable line:\n```java\n{text}\n```"
         f"\n\nCurrent imports:\n```java\n{imp}\n```"
+        f"Explain what fixes are going to be made and why they fix the vulnerability or why the vulnerability is a false positive."
+        f"Your response should only include the explanation of what is going to be fixed, do not include any imports."
     )
 
-    response = None
-    for _ in range(3):
-        response = oclient.chat(
-            model="qwen2.5-coder:14b",
-            messages=[
-                {
-                    "role": "user",
-                    "content": prompt,
-                }
-            ]
+    patch_prompt = """
+Now implement your fix into the `parent section`.
+Your response should only contain valid java code and must be formatted in a markdown codeblock.
+If no changes are needed to the `parent section`, reply only with `n/a`.
+"""
+
+    imp_prompt = """
+Now you need to list any import statement that would be needed for your implementation.
+Your response should only contain valid java imports and must be formatted in a markdown codeblock.
+If no new imports are needed, reply only with `n/a`.
+"""
+
+    ex_response = oclient.chat(
+        model="llm-coder",
+        messages=[
+            {
+                "role": "user",
+                "content": ex_prompt,
+            }
+        ],
+    )
+    exp_text = ex_response.message.content
+    print(f"Explanation:\n{exp_text}")
+
+    patch_response = oclient.chat(
+        model="llm-coder",
+        messages=[
+            {
+                "role": "user",
+                "content": ex_prompt,
+            },
+            {
+                "role": "system",
+                "content": exp_text,
+            },
+            {
+                "role": "user",
+                "content": patch_prompt,
+            },
+        ],
+    )
+    patch = patch_response.message.content
+    assert "```java" in patch
+    assert "```" in patch
+    fixed_parent_text = patch.replace("```java", "").replace("```", "")
+    print(f"Patch:\n{fixed_parent_text}")
+
+    imp_response = oclient.chat(
+        model="llm-coder",
+        messages=[
+            {
+                "role": "user",
+                "content": ex_prompt,
+            },
+            {
+                "role": "system",
+                "content": exp_text,
+            },
+            {
+                "role": "user",
+                "content": patch_prompt,
+            },
+            {
+                "role": "system",
+                "content": patch,
+            },
+            {
+                "role": "user",
+                "content": imp_prompt,
+            },
+        ],
+    )
+    imp = imp_response.message.content
+    assert "```java" in imp
+    assert "```" in imp
+    fixed_import_text = imp.replace("```java", "").replace("```", "")
+    print(f"Imp:\n{fixed_import_text}")
+
+    if not fixed_parent_text or not fixed_import_text or not exp_text:
+        print(
+            f"Text was empty: "
+            f"P:{bool(fixed_parent_text)} "
+            f"I:{bool(fixed_import_text)} "
+            f"E:{bool(exp_text)}"
         )
-
-        if (
-                all([
-                    i in response.message.content
-                    for i in [
-                        "I'm sorry, but I can't help with that",
-                        "**Fixed Parent Section**",
-                        "**Explanation**",
-                        "**Imports**",
-                    ]
-                ])
-        ):
-            break
-
-    if "I'm sorry, but I can't help with that" in response.message.content:
         return text, imp, "No changes were made."
 
-    response_text = response.message.content
+    return str(fixed_parent_text), str(fixed_import_text), str(exp_text)
 
-    # parse the fixed parent section
-
-    in_section = False
-    fixed_parent_text = ""
-    for line in response_text.splitlines():
-        if "**Fixed Parent Section**" in line:
-            in_section = True
-        elif "```" in line and "java" not in line:
-            in_section = False
-        elif in_section and "```" not in line and "java" not in line:
-            fixed_parent_text += line + "\n"
-
-    fixed_import_text = ""
-    for line in response_text.splitlines():
-        if "**Imports**" in line:
-            in_section = True
-        elif "```" in line and "java" not in line:
-            in_section = False
-        elif in_section and "```" not in line and "java" not in line:
-            fixed_import_text += line + "\n"
-
-    explanation_text = ""
-    for line in response_text.splitlines():
-        if "**Explanation**" in line:
-            in_section = True
-        elif in_section:
-            explanation_text += line + "\n"
-
-    if not fixed_parent_text or not fixed_import_text or not explanation_text:
-        print(f"Text was empty: "
-              f"P:{bool(fixed_parent_text)} "
-              f"I:{bool(fixed_import_text)} "
-              f"E:{bool(explanation_text)}"
-              f"\n{response_text}")
-        return text, imp, "No changes were made."
-
-    return str(fixed_parent_text), str(fixed_import_text), str(explanation_text)
 
 def splice_fix(hotspot: dict, patch: str, imports: str) -> str:
     """
@@ -270,11 +283,11 @@ def splice_fix(hotspot: dict, patch: str, imports: str) -> str:
 
     before_lines = lines[:start_line]
     after_lines = lines[(end_line + 1):]
-    patched = patch.split("\n")
-    patched.insert(0, "// New code begins below")
-    patched.append("// New code ends here")
+    patched_lines = patch.split("\n")
+    patched_lines.insert(0, "// New code begins below")
+    patched_lines.append("// New code ends here")
 
-    before_lines.extend(patched)
+    before_lines.extend(patched_lines)
     lines = before_lines
     lines.extend(after_lines)
 
@@ -288,7 +301,31 @@ def splice_fix(hotspot: dict, patch: str, imports: str) -> str:
     before_lines = lines[:start_line]
     after_lines = lines[(end_line + 1):]
 
-    return '\n'.join(before_lines) + '\n' + imports + '\n' + '\n'.join(after_lines)
+    file = "\n".join(before_lines) + "\n".join(after_lines)
+
+    imps = []
+    for line in imports.split("\n"):
+        if line.strip() not in file:
+            imps.append(line)
+
+    lines = file.split("\n")
+    in_imports = False
+    for i in range(len(lines)):
+        line = lines[i]
+        if line.strip().startswith("import") or line.strip().startswith("package"):
+            in_imports = True
+        elif in_imports:
+            before_lines = lines[:i]
+            after_lines = lines[(i + 1):]
+            file = (
+                    "\n".join(before_lines)
+                    + "\n"
+                    + "\n".join(imps)
+                    + "\n".join(after_lines)
+            )
+            break
+
+    return file
 
 
 times = []
@@ -296,10 +333,12 @@ for _ in range(1):
     spot = random.choice(hotspots)
 
     tStart = time.time()
-    patch, imps, explanation = get_fix(client, spot)
+    patched, imps, explanation = get_fix(client, spot)
     tDuration = time.time() - tStart
     print(f"Patch ({tDuration}s):\n{explanation}")
-    print(f"----\nFixed File:\n{splice_fix(spot, patch, imps)}")
+    print(f"----\nFixed File:\n{splice_fix(spot, patched, imps)}")
     times.append(tDuration)
 
-print(f"\n\n----\nAverage response time: {sum(times) / len(times)}s, Min: {min(times)}, Max: {max(times)}")
+print(
+    f"\n\n----\nAverage response time: {sum(times) / len(times)}s, Min: {min(times)}, Max: {max(times)}"
+)
