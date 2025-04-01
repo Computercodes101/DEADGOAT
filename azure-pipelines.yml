@@ -11,6 +11,9 @@ pool:
 steps:
 - checkout: self
   fetchDepth: 0
+- task: gitsync@1
+  inputs:
+    GitRepoUrl: 'https://github.com/Computercodes101/DEADGOAT'
 - task: Bash@3
   inputs:
     targetType: 'inline'
