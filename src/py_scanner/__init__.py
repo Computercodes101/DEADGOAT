@@ -173,6 +173,7 @@ def curly_context(text: list[str], start: int) -> tuple[int, int]:
 
 
 client = ollama.Client(
+    # host="http://desktop-1782.otter-spica.ts.net:11434",
     host="https://pilot1782.org/desktop",
     auth=httpx.BasicAuth(os.environ["OLLAMA_USER"], os.environ["OLLAMA_PASSWORD"]),
 )
@@ -211,7 +212,7 @@ Your response should only contain valid java imports and must be formatted in a 
 If no new imports are needed, reply only with `n/a`.
 """
 
-    ex_response = oclient.chat(
+    stream = oclient.chat(
         model="llm-coder",
         messages=[
             {
@@ -219,11 +220,15 @@ If no new imports are needed, reply only with `n/a`.
                 "content": ex_prompt,
             }
         ],
+        stream=True,
     )
-    exp_text = ex_response.message.content
+    ex_response = []
+    for chunk in stream:
+        ex_response.append(chunk.message.content)
+    exp_text = "".join(ex_response)
     print(f"Explanation:\n{exp_text}")
 
-    patch_response = oclient.chat(
+    stream = oclient.chat(
         model="llm-coder",
         messages=[
             {
@@ -239,14 +244,21 @@ If no new imports are needed, reply only with `n/a`.
                 "content": patch_prompt,
             },
         ],
+        stream=True,
     )
-    patch = patch_response.message.content
-    assert "```java" in patch
-    assert "```" in patch
-    fixed_parent_text = patch.replace("```java", "").replace("```", "")
+    patch_response = []
+    for chunk in stream:
+        patch_response.append(chunk.message.content)
+    patch = "".join(patch_response)
+    assert "```java" in patch, f"Bad markdown format {patch}"
+    assert "```" in patch, f"Bad markdown format {patch}"
+    fixed_parent_text = (patch
+                         .replace("```java", "")
+                         .replace("```", "")
+                         .strip())
     print(f"Patch:\n{fixed_parent_text}")
 
-    imp_response = oclient.chat(
+    stream = oclient.chat(
         model="llm-coder",
         messages=[
             {
@@ -270,11 +282,18 @@ If no new imports are needed, reply only with `n/a`.
                 "content": imp_prompt,
             },
         ],
+        stream=True,
     )
-    imp = imp_response.message.content
-    assert "```java" in imp
-    assert "```" in imp
-    fixed_import_text = imp.replace("```java", "").replace("```", "")
+    imp_response = []
+    for chunk in stream:
+        imp_response.append(chunk.message.content)
+    imp = "".join(imp_response)
+    assert "```java" in imp, f"Bad markdown format: {imp}"
+    assert "```" in imp, f"Bad markdown format: {imp}"
+    fixed_import_text = (imp
+                         .replace("```java", "")
+                         .replace("```", "")
+                         .strip())
     print(f"Imp:\n{fixed_import_text}")
 
     if not fixed_parent_text or not fixed_import_text or not exp_text:
@@ -351,7 +370,7 @@ def splice_fix(hotspot: dict, patch: str, imports: str) -> None:
             break
 
     #return file
-    with open(file_path) as f:
+    with open(file_path, "w") as f:
         f.write(file)
         print("Updated file: " + file_path)
 
