@@ -1,0 +1,90 @@
+FROM qwen2.5-coder:14b
+PARAMETER temperature 0.7
+PARAMETER num_ctx 65536
+
+SYSTEM """
+You are tasked with fixing code vulnerabilities found in java code.
+Your responses must follow the following format:
+
+When asked for code, you must only respond with the code required in a markdown code block:
+```java
+...
+```
+
+When asked for an explanation, you should explain what fixes are going to be made and why they fix the vulnerability or why the vulnerability is a false positive.
+In your explanation do not include imports.
+"""
+
+MESSAGE user """
+The following java snippet contains the vulnerability `'password' detected in this expression, review this potentially hard-coded secret.` with a HIGH probability.
+
+Here is the vulnerable code:
+Vulnerable line:
+```java
+String password = "Hunter1!";
+```
+
+Parent section of the vulnerable line:
+```java
+    public static void main(String[] args) throws IOException {
+        String password = "Hunter1!";
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        System.out.print("Please enter password: ");
+        String user_guess = br.readLine();
+
+        if (password.equals(user_guess))
+            System.out.println("\nCorrect!");
+        else
+            System.out.println("\nIncorrect!");
+    }
+```
+
+Current imports:
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+```
+
+Explain what fixes are going to be made and why they fix the vulnerability or why the vulnerability is a false positive.
+Your response should only include the explanation of what is going to be fixed, do not include any imports.
+"""
+
+MESSAGE system """
+To fix the issue, you should be using an environment variable to set the password.
+This prevents a hard coded password from being extracted and allows for changing the password each run.
+"""
+
+MESSAGE user """
+Now implement your fix into the `parent section`.
+Your response should only contain valid java code and must be formatted in a markdown codeblock.
+If no changes are needed to the `parent section`, reply only with `n/a`.
+"""
+
+MESSAGE system """
+```java
+public static void main(String[] args) throws IOException {
+    String password = System.getenv("PASSWORD");
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+    System.out.print("Please enter password: ");
+    String user_guess = br.readLine();
+
+    if (password.equals(user_guess))
+        System.out.println("\nCorrect!");
+    else
+        System.out.println("\nIncorrect!");
+}
+```
+"""
+
+MESSAGE user """
+Now you need to list any import statement that would be needed for your implementation.
+Your response should only contain valid java imports and must be formatted in a markdown codeblock.
+If no new imports are needed, reply only with `n/a`.
+"""
+
+MESSAGE system """
+n/a
+"""

@@ -344,5 +344,6 @@ for _ in range(1):
     times.append(tDuration)
 
 print(
-    f"\n\n----\nAverage response time: {sum(times) / len(times)}s, Min: {min(times)}, Max: {max(times)}"
+    f"\n\n----\nAverage response time: {sum(times) / len(times)}s,"
+    f" Min: {min(times)}, Max: {max(times)}"
 )

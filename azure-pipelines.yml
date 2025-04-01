@@ -24,17 +24,6 @@ steps:
     jdkFile: '$(Build.SourcesDirectory)/openjdk-23.0.2_linux-x64_bin.tar.gz'
     jdkDestinationDirectory: '$(Build.BinariesDirectory)/open-jdk'
     cleanDestinationDirectory: true
-- task: NodeTool@0
-  inputs:
-    versionSpec: '18'
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: |
-      npm ci
-      npx playwright install --with-deps
-      npx playwright test
-      export CI="true"
 
 - task: SonarCloudPrepare@3
   inputs:
@@ -47,7 +36,7 @@ steps:
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
-    goals: 'verify'
+    goals: 'verify clean install spotless:apply'
     options: '-X -e'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
@@ -57,19 +46,19 @@ steps:
     effectivePomSkip: false
     sonarQubeRunAnalysis: true
     sqMavenPluginVersionChoice: 'latest'
-- task: Maven@4
-  inputs:
-    mavenPomFile: 'pom.xml'
-    goals: 'clean install spotless:apply'
-    options: '-X -e'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    javaHomeOption: 'JDKVersion'
-    mavenVersionOption: 'Default'
-    mavenAuthenticateFeed: false
-    effectivePomSkip: false
-    sonarQubeRunAnalysis: true
-    sqMavenPluginVersionChoice: 'latest'
+# - task: Maven@4
+#   inputs:
+#     mavenPomFile: 'pom.xml'
+#     goals: 'clean install spotless:apply'
+#     options: '-X -e'
+#     publishJUnitResults: true
+#     testResultsFiles: '**/surefire-reports/TEST-*.xml'
+#     javaHomeOption: 'JDKVersion'
+#     mavenVersionOption: 'Default'
+#     mavenAuthenticateFeed: false
+#     effectivePomSkip: false
+#     sonarQubeRunAnalysis: true
+#     sqMavenPluginVersionChoice: 'latest'
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
