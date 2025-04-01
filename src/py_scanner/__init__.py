@@ -1,7 +1,10 @@
+import datetime
 import os
 import random
 import re
 import time
+import sys
+import subprocess
 
 import httpx
 import ollama
@@ -50,6 +53,27 @@ hotspots = requests.get(
         "section": "params",
     },
 ).json()["hotspots"]
+print(f"Found {len(hotspots)} hotspots")
+
+if len(hotspots) == 0:
+    print("No hotspots found, exiting")
+    exit(0)
+
+# create a new branch
+branch = f"DEADGOAT-{datetime.datetime.now().strftime('%Y%m%d')}-{os.urandom(4).hex()}"
+p = subprocess.Popen(
+    ["git", "branch",branch],
+    stdout=sys.stdout,
+    stderr=sys.stderr,
+)
+p.communicate()
+p = subprocess.Popen(
+    ["git", "checkout", branch],
+    stdout=sys.stdout,
+    stderr=sys.stderr,
+)
+p.communicate()
+print(f"Created new branch {branch}")
 
 
 def parse_spot(hotspot: dict) -> tuple[str, str, str]:
@@ -95,7 +119,7 @@ def curly_context(text: list[str], start: int) -> tuple[int, int]:
     :param start: start line
     :return: (start, end)
     """
-    #TODO: 
+
     function_regex = re.compile(
         r"\w*\s+"  # return type
         r"\w+\s*"  # function name
