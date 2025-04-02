@@ -399,7 +399,7 @@ def splice_fix(hotspot: dict, patch: str, imports: str) -> None:
 
 # commit all changes
 p = subprocess.Popen(
-    ["git", "commit" "." "-m" "patchin stuff"],
+    ["git", "commit", ".", "-m", "patchin stuff"],
     stdout=sys.stdout,
     stderr=sys.stderr,
 )
