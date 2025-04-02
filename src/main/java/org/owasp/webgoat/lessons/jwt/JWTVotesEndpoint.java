@@ -2,45 +2,43 @@
  * SPDX-FileCopyrightText: Copyright © 2017 WebGoat authors
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
-package org.owasp.webgoat.lessons.jwt;
-
-import static java.util.Comparator.comparingLong;
-import static java.util.Optional.ofNullable;
-import static java.util.stream.Collectors.toList;
-import static org.owasp.webgoat.container.assignments.AttackResultBuilder.failed;
-import static org.owasp.webgoat.container.assignments.AttackResultBuilder.success;
-
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwt;
-import io.jsonwebtoken.JwtException;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.impl.TextCodec;
+import org.springframework.web.bind.annotation.GetMapping;
+import java.time.Instant;
+import org.springframework.web.bind.annotation.RestController;
 import jakarta.annotation.PostConstruct;
+import io.jsonwebtoken.Jwts;
+import org.springframework.web.bind.annotation.ResponseBody;
 import jakarta.servlet.http.Cookie;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.owasp.webgoat.lessons.jwt.votes.Views;
+import org.springframework.web.bind.annotation.CookieValue;
+import static org.owasp.webgoat.container.assignments.AttackResultBuilder.success;
+import org.owasp.webgoat.lessons.jwt.votes.Vote;
+import io.jsonwebtoken.Jwt;
+import io.jsonwebtoken.impl.TextCodec;
+import java.util.HashMap;
+import static java.util.Optional.ofNullable;
+import io.jsonwebtoken.Claims;
+import org.owasp.webgoat.container.assignments.AssignmentHints;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.PathVariable;
+import io.jsonwebtoken.JwtException;
+import static org.owasp.webgoat.container.assignments.AttackResultBuilder.failed;
+import java.util.Map;
+import static java.util.stream.Collectors.toList;
+import org.owasp.webgoat.container.assignments.AttackResult;
+import org.owasp.webgoat.container.assignments.AssignmentEndpoint;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.apache.commons.lang3.StringUtils;
+import static java.util.Comparator.comparingLong;
 import jakarta.servlet.http.HttpServletResponse;
 import java.time.Duration;
-import java.time.Instant;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import org.apache.commons.lang3.StringUtils;
-import org.owasp.webgoat.container.assignments.AssignmentEndpoint;
-import org.owasp.webgoat.container.assignments.AssignmentHints;
-import org.owasp.webgoat.container.assignments.AttackResult;
-import org.owasp.webgoat.lessons.jwt.votes.Views;
-import org.owasp.webgoat.lessons.jwt.votes.Vote;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJacksonValue;
-import org.springframework.web.bind.annotation.CookieValue;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import java.util.Date;
 
 @RestController
 @AssignmentHints({
@@ -101,27 +99,31 @@ public class JWTVotesEndpoint implements AssignmentEndpoint {
   }
 
   @GetMapping("/JWT/votings/login")
-  public void login(@RequestParam("user") String user, HttpServletResponse response) {
-    if (validUsers.contains(user)) {
-      Claims claims = Jwts.claims().setIssuedAt(Date.from(Instant.now().plus(Duration.ofDays(10))));
-      claims.put("admin", "false");
-      claims.put("user", user);
-      String token =
-          Jwts.builder()
-              .setClaims(claims)
-              .signWith(io.jsonwebtoken.SignatureAlgorithm.HS512, JWT_PASSWORD)
-              .compact();
-      Cookie cookie = new Cookie("access_token", token);
-      response.addCookie(cookie);
-      response.setStatus(HttpStatus.OK.value());
-      response.setContentType(MediaType.APPLICATION_JSON_VALUE);
-    } else {
-      Cookie cookie = new Cookie("access_token", "");
-      response.addCookie(cookie);
-      response.setStatus(HttpStatus.UNAUTHORIZED.value());
-      response.setContentType(MediaType.APPLICATION_JSON_VALUE);
-    }
+// New code begins below
+public void login(@RequestParam("user") String user, HttpServletResponse response) {
+  if (validUsers.contains(user)) {
+    Claims claims = Jwts.claims().setIssuedAt(Date.from(Instant.now().plus(Duration.ofDays(10))));
+    claims.put("admin", "false");
+    claims.put("user", user);
+    String token =
+        Jwts.builder()
+            .setClaims(claims)
+            .signWith(io.jsonwebtoken.SignatureAlgorithm.HS512, JWT_PASSWORD)
+            .compact();
+    Cookie cookie = new Cookie("access_token", token);
+    cookie.setHttpOnly(true); // Add HttpOnly flag
+    response.addCookie(cookie);
+    response.setStatus(HttpStatus.OK.value());
+    response.setContentType(MediaType.APPLICATION_JSON_VALUE);
+  } else {
+    Cookie cookie = new Cookie("access_token", "");
+    cookie.setHttpOnly(true); // Add HttpOnly flag
+    response.addCookie(cookie);
+    response.setStatus(HttpStatus.UNAUTHORIZED.value());
+    response.setContentType(MediaType.APPLICATION_JSON_VALUE);
   }
+}
+// New code ends here
 
   @GetMapping("/JWT/votings")
   @ResponseBody
