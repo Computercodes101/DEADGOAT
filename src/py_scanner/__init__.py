@@ -1,4 +1,5 @@
 import datetime
+import json
 import os
 import random
 import re
@@ -379,19 +380,50 @@ def splice_fix(hotspot: dict, patch: str, imports: str) -> None:
     except Exception as err:
         print(f"Failed to update file: {file_path}\n{err}\n{file}")
 
+#
+# times = []
+# for _ in range(1):
+#     spot = random.choice(hotspots)
+#
+#     tStart = time.time()
+#     patched, imps, explanation = get_fix(client, spot)
+#     tDuration = time.time() - tStart
+#     print(f"Patch ({tDuration}s):\n{explanation}")
+#     print(f"----\nFixed File:\n{splice_fix(spot, patched, imps)}")
+#     times.append(tDuration)
+#
+# print(
+#     f"\n\n----\nAverage response time: {sum(times) / len(times)}s,"
+#     f" Min: {min(times)}, Max: {max(times)}"
+# )
 
-times = []
-for _ in range(1):
-    spot = random.choice(hotspots)
-
-    tStart = time.time()
-    patched, imps, explanation = get_fix(client, spot)
-    tDuration = time.time() - tStart
-    print(f"Patch ({tDuration}s):\n{explanation}")
-    print(f"----\nFixed File:\n{splice_fix(spot, patched, imps)}")
-    times.append(tDuration)
-
-print(
-    f"\n\n----\nAverage response time: {sum(times) / len(times)}s,"
-    f" Min: {min(times)}, Max: {max(times)}"
+# commit all changes
+p = subprocess.Popen(
+    ["git", "commit" "." "-m" "patchin stuff"],
+    stdout=sys.stdout,
+    stderr=sys.stderr,
 )
+p.communicate()
+# push
+p = subprocess.Popen(
+    ["git", "push", "origin", branch],
+    stdout=sys.stdout,
+    stderr=sys.stderr,
+)
+p.communicate()
+
+p = subprocess.Popen(
+    ["az", "repos", "pr", "create",
+     "--organization", os.environ["AZURE_ORG"],
+     "--project", os.environ["AZURE_PROJECT"],
+     ],
+    stdout=sys.stdout,
+    stderr=sys.stderr,
+)
+p.communicate()
+
+repos = subprocess.check_output(
+    ["az", "repos", "list"],
+)
+repos = json.loads(repos)
+repo = repos[0]
