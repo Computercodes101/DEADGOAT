@@ -173,8 +173,8 @@ def curly_context(text: list[str], start: int) -> tuple[int, int]:
 
 
 client = ollama.Client(
-    # host="http://desktop-1782.otter-spica.ts.net:11434",
-    host="https://pilot1782.org/desktop",
+    host="http://desktop-1782.otter-spica.ts.net:11434",
+    # host="https://pilot1782.org/desktop",
     auth=httpx.BasicAuth(os.environ["OLLAMA_USER"], os.environ["OLLAMA_PASSWORD"]),
 )
 
@@ -253,8 +253,8 @@ If no new imports are needed, reply only with `n/a`.
     assert "```java" in patch, f"Bad markdown format {patch}"
     assert "```" in patch, f"Bad markdown format {patch}"
     fixed_parent_text = (patch
-                         .replace("```java", "")
-                         .replace("```", "")
+                         .split("```java")[-1]
+                         .split("```")[0]
                          .strip())
     print(f"Patch:\n{fixed_parent_text}")
 
@@ -291,8 +291,8 @@ If no new imports are needed, reply only with `n/a`.
     assert "```java" in imp, f"Bad markdown format: {imp}"
     assert "```" in imp, f"Bad markdown format: {imp}"
     fixed_import_text = (imp
-                         .replace("```java", "")
-                         .replace("```", "")
+                         .split("```java")[-1]
+                         .split("```")[0]
                          .strip())
     print(f"Imp:\n{fixed_import_text}")
 
@@ -347,32 +347,37 @@ def splice_fix(hotspot: dict, patch: str, imports: str) -> None:
 
     file = "\n".join(before_lines) + "\n".join(after_lines)
 
-    imps = []
+    # Unique set of import statements
+    imps = set()
     for line in imports.split("\n"):
-        if line.strip() not in file:
-            imps.append(line)
+        imps.add(line)
+    for line in lines:
+        if line.strip().startswith("import"):
+            imps.add(line)
 
     lines = file.split("\n")
-    in_imports = False
-    for i in range(len(lines)):
-        line = lines[i]
-        if line.strip().startswith("import") or line.strip().startswith("package"):
-            in_imports = True
-        elif in_imports:
-            before_lines = lines[:i]
-            after_lines = lines[(i + 1) :]
-            file = (
-                "\n".join(before_lines)
-                + "\n"
-                + "\n".join(imps)
-                + "\n".join(after_lines)
-            )
-            break
+    lines = list(filter(lambda line: not line.strip().startswith("import"), lines))
+    print(f"Combined imports:\n{imps}")
+    if "package " in file:
+        for i in range(len(lines)):
+            line = lines[i]
+            if line.strip().startswith("package"):
+                before_lines = lines[:i]
+                after_lines = lines[i + 1:]
+                lines = before_lines + list(imps) + after_lines
+                break
+    else:
+        lines = list(imps) + lines
+
+    file = "\n".join(lines)
 
     #return file
-    with open(file_path, "w") as f:
-        f.write(file)
-        print("Updated file: " + file_path)
+    try:
+        with open(file_path, "w") as f:
+            f.write(file)
+            print("Updated file: " + file_path)
+    except Exception as err:
+        print(f"Failed to update file: {file_path}\n{err}\n{file}")
 
 
 times = []
